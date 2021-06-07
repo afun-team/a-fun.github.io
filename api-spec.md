@@ -31,6 +31,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 <span style="color:red; font-size : 14px">**Authorization의 Bearer 이하 내용은 에이락에서 전달</span>
 
 Parameter
+
 |Name|Type|Description|Require|Example|
 |:---:|:---:|---|---|---|
 |<c-red>customerUID|String|고객사의 고객 고유 번호|O|"afun-UID_00000001"|
@@ -118,6 +119,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 <span style="color:red; font-size : 14px">**Authorization의 Bearer 이하 내용은 에이락에서 전달</span>
 
 Parameter
+
 |Name|Type|Description|Require|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
@@ -261,6 +263,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 ```
 
 Parameter
+
 |Name|Type|Description|Require|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
@@ -608,7 +611,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 ```
 
 Parameter
-
 
 |Name|Type|Description|Require|Example|
 |:---:|:---:|---|---|---|
