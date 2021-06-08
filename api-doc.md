@@ -1,4 +1,9 @@
-# 🚀 에이락 리워드 플랫폼 API
+<style>
+    h1 { display: none }
+    h2 { font-size: 2em !important }
+</style>
+
+<h2 id="-에이락-리워드-플랫폼-api">🚀 에이락 리워드 플랫폼 API</h2>
 
 에이락 리워드 플랫폼은 고객사의 고객에게 암호화폐 리워드를 제공하기 위하여 구축된 서비스 플랫폼입니다. 이 문서에서는 고객사와 에이락 월렛이 각각 에이락 리워드 플랫폼 API 서버와 연동하기 위하여 필요한 정보를 제공합니다.
 
@@ -31,7 +36,7 @@ https://api.alock.io/v1/{api-url}
 - 항상 요청 프로토콜의 header에 Authorization 항목에 고객사의 토큰이 들어있어야 합니다.
 - 요청에 필요한 parameter는 json 방식을 사용합니다.
 
-# API 개요
+<h2 id="api-개요">API 개요</h2>
 
 📌 API 목록 및 개략적인 내용은 다음과 같습니다.
 
@@ -191,6 +196,6 @@ https://api.alock.io/v1/{api-url}
     - Response
         - 출금 상세 내역(transfers)
 
-# API 상세 내역
+<h2 id="api-상세-내역">API 상세 내역</h2>
 
 [https://a-fun.github.io/api-spec](https://a-fun.github.io/api-spec)
