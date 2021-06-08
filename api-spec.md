@@ -161,13 +161,14 @@ Parameter
   <strong style="vertical-align: super">Response</strong>
 </div>
 
+<c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|Int|Asset ID|20|
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |balance|String|리워드 잔고|"10000"|
-|customer_name|String|사용자 이름|"홍길동"|
 |account_nickname|String|계좌 별칭|"투자용계좌"|
 |chain_name|String|체인명|"Ethereum"|
 |tokenSpec_name|String|토큰명|"tokenSpec_name"|
@@ -220,13 +221,18 @@ Connection: close
   "id": 2,
   "createdAt": "2021-06-04T05:44:18.280Z",
   "updatedAt": null,
-  "balance": "6005",
-  "customer_name": "홍길동",
-  "chain_name": "Ethereum",
-  "account_nickname": "투자용계좌",
-  "tokenSpec_name": "tokenSpec_name",
-  "tokenSpec_symbol": "ETH",
-  "tokenSpec_decimal": "10"
+  "balance": "12005",
+  "account": {
+    "nickname": "test_nick"
+  },
+  "chain": {
+    "name": "Ethereum"
+  },
+  "tokenSpec": {
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "decimals": "10"
+  }
 }
 
   ```
@@ -282,11 +288,7 @@ Parameter
 |id|Int|DB상의 사용자 id|20|
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|channelId|Int|channelId|1|
-|walletId|Int|walletId|1|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|safeAccount|String|에이락 월렛 주소|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
-|publicKey|String|에이락 월렛 퍼블릭키|"tempPublicKey1622427282147"|
 |elements|List\<accounts>|해당 고객의 지갑 리스트|하단 참조|
 
 accounts
@@ -296,9 +298,6 @@ accounts
 |id|int|사용자 account id|1|
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|ownerId|Int|ownerId|1|
-|chainId|Int|chainId|1|
-|address|String|암호화폐 지갑 주소|"0x00115ag48r4vr86s6v4rbn"|
 |nickname|String|암호화폐 지갑 별칭|"my_first_account"|
 |info|String|지갑 정보|"something info..."|
 |elements|\<chain>|해당 고객의 체인|하단 참조|
@@ -311,7 +310,6 @@ chain
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |name|String|체인 이름|"Ethereum"|
-|regNumber|String|사업자 등록번호|"04861486-486-4887725"|
 |info|String|체인 정보|"something info..."|
 
 
@@ -357,47 +355,33 @@ Connection: close
   "createdAt": "2021-06-04T04:46:29.624Z",
   "updatedAt": null,
   "customerUID": "customerUID_001",
-  "safeAccount": "에이락 앱에서 전달_Unique00801",
-  "publicKey": "에이락 앱에서 전달_Unique00801",
-  "channelId": 1,
-  "walletId": 7,
   "accounts": [
     {
       "id": 1,
       "createdAt": "2021-06-04T05:37:47.800Z",
       "updatedAt": null,
-      "address": "0x00",
       "nickname": "test_nick",
       "info": null,
-      "ownerId": 1,
-      "chainId": 1,
       "chain": {
         "id": 1,
         "createdAt": "2021-06-04T04:37:00.496Z",
         "updatedAt": null,
         "name": "Ethereum",
-        "regNumber": "0001",
-        "info": null,
-        "apiToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbklkIjoxLCJpYXQiOjE2MjI3ODE0MjB9.AVyRaeeJCDqCS_gw4WMNpdUB9hEUsb0n09XvMjRoC1M"
+        "info": null
       }
     },
     {
       "id": 3,
       "createdAt": "2021-06-04T05:37:47.800Z",
       "updatedAt": null,
-      "address": "0x001",
       "nickname": "test_nick2",
       "info": null,
-      "ownerId": 1,
-      "chainId": 2,
       "chain": {
         "id": 2,
         "createdAt": "2021-06-04T04:37:09.110Z",
         "updatedAt": null,
         "name": "Tether",
-        "regNumber": "0002",
-        "info": null,
-        "apiToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbklkIjoyLCJpYXQiOjE2MjI3ODE0Mjl9.bnuhTPF5cnVDVjcyFFv3UZpjuew9wXPTmbZClQKCLZM"
+        "info": null
       }
     }
   ]
@@ -451,6 +435,8 @@ Parameter
   <strong style="vertical-align: super">Response</strong>
 </div>
 
+<c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|Int|리워드 ID|20|
@@ -464,24 +450,15 @@ Parameter
 |territory|String|국가 지역 코드|X|"KR"|
 |amount|String|리워드 금액|"100"|
 |status|String|리워드 지급 상태|"reward"|
+|channel_id|Int|고객사id|1|
 |channel_name|String|고객사명|"고객사0001"|
-|customer_name|String|사용자 이름|"홍길동"|
+|channel_info|String|고객사 정보|"고객사_info"|
 |account_nickname|String|계좌 별칭|"투자용계좌"|
 |chain_name|String|체인명|"Ethereum"|
 |tokenSpec_name|String|토큰명|"tokenSpec_name"|
 |tokenSpec_symbol|String|토큰 심볼|"ETH"|
 |tokenSpec_decimal|String|토큰 데시멀|"10"|
-|elements|\<asset>|해당 사용자의 asset 리스트|하단 참조|
-
-asset
-
-|Name|Type|Description|Example|
-|:---:|:---:|---|---|
-|id|int|사용자 asset id|1|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|balance|String|리워드 잔고|"50000"|
-
+|asset_balance|String|리워드 잔고|"50000"|
 
 Error Message
 
@@ -516,9 +493,9 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 4230
-ETag: W/"1086-L02B47iOh7+lVwV2P5vegdJ+ocI"
-Date: Mon, 07 Jun 2021 08:08:02 GMT
+Content-Length: 6575
+ETag: W/"19af-Etl1Ko1A5IhedVICofAyumYc3x8"
+Date: Tue, 08 Jun 2021 08:21:05 GMT
 Connection: close
 
 [
@@ -534,26 +511,37 @@ Connection: close
     "territory": "KR",
     "amount": "1000",
     "status": "reward",
-    "channel_name": "고객사0001",
-    "customer_name": "홍길동",
-    "account_nickname": "투자용계좌",
-    "chain_name": "Ethereum",
-    "tokenSpec_name": "tokenSpec_name",
-    "tokenSpec_symbol": "ETH",
-    "tokenSpec_decimal": "10",
-    "assetId": 2,
+    "channel": {
+      "id": 1,
+      "name": "고객사_01",
+      "info": "CO1"
+    },
+    "account": {
+      "id": 1,
+      "nickname": "test_nick",
+      "info": null
+    },
+    "chain": {
+      "id": 1,
+      "name": "Ethereum",
+      "info": null
+    },
+    "tokenSpec": {
+      "id": 1,
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "decimals": "10"
+    },
     "asset": {
       "id": 2,
-      "createdAt": "2021-06-04T05:44:18.280Z",
-      "updatedAt": null,
-      "balance": "8005",
+      "balance": "12005"
     }
   },
   {
-    "id": 3,
-    "createdAt": "2021-06-04T05:44:35.084Z",
+    "id": 13,
+    "createdAt": "2021-06-07T06:51:59.565Z",
     "updatedAt": null,
-    "requestUID": "고객사앱에서 전송_Unique_000002",
+    "requestUID": "고객사앱에서 전송_Unique_000001001",
     "date": "date_test_00001",
     "type": "transfer",
     "value": "1000",
@@ -561,22 +549,72 @@ Connection: close
     "territory": "KR",
     "amount": "1000",
     "status": "reward",
-    "channel_name": "고객사0001",
-    "customer_name": "홍길동",
-    "account_nickname": "투자용계좌",
-    "chain_name": "Ethereum",
-    "tokenSpec_name": "tokenSpec_name",
-    "tokenSpec_symbol": "ETH",
-    "tokenSpec_decimal": "10",
-    "assetId": 2,
+    "channel": {
+      "id": 1,
+      "name": "고객사_01",
+      "info": "CO1"
+    },
+    "account": {
+      "id": 1,
+      "nickname": "test_nick",
+      "info": null
+    },
+    "chain": {
+      "id": 1,
+      "name": "Ethereum",
+      "info": null
+    },
+    "tokenSpec": {
+      "id": 1,
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "decimals": "10"
+    },
     "asset": {
       "id": 2,
-      "createdAt": "2021-06-04T05:44:18.280Z",
-      "updatedAt": null,
-      "balance": "8005"
+      "balance": "12005"
+    }
+  },
+  {
+    "id": 23,
+    "createdAt": "2021-06-08T07:01:45.049Z",
+    "updatedAt": null,
+    "requestUID": "고객사앱에서 전송_Unique_10000100102",
+    "date": "date_test_00001",
+    "type": "transfer",
+    "value": "1000",
+    "currency": "KRW",
+    "territory": "KR",
+    "amount": "1000",
+    "status": "reward",
+    "channel": {
+      "id": 1,
+      "name": "고객사_01",
+      "info": "CO1"
+    },
+    "account": {
+      "id": 1,
+      "nickname": "test_nick",
+      "info": null
+    },
+    "chain": {
+      "id": 1,
+      "name": "Ethereum",
+      "info": null
+    },
+    "tokenSpec": {
+      "id": 1,
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "decimals": "10"
+    },
+    "asset": {
+      "id": 2,
+      "balance": "12005"
     }
   }
 ]
+
 
   ```
 
@@ -635,16 +673,14 @@ Parameter
   <strong style="vertical-align: super">Response</strong>
 </div>
 
+<c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|Int|DB상의 사용자 id|20|
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|safeAccount|String|에이락 월렛 주소|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
-|publicKey|String|에이락 월렛 퍼블릭키|"tempPublicKey1622427282147"|
-|channelId|Int|channelId|1|
-|walletId|Int|walletId|1|
 |elements|List\<assets>|해당 고객의 assets 리스트|하단 참조|
 
 assets
@@ -652,50 +688,18 @@ assets
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 asset id|1|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |balance|String|리워드 잔고|"50000"|
-|elements|\<chain>|해당 고객의 체인|하단 참조|
-|elements|\<account>|해당 고객의 지갑|하단 참조|
-|elements|\<tokenSpec>|해당 고객의 토큰스펙|하단 참조|
-
-chain
-
-|Name|Type|Description|Example|
-|:---:|:---:|---|---|
-|id|int|사용자 chain id|1|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|name|String|chain name|"Ethereum"|
-|regNumber|String|사업자 등록번호|"04861486-486-4887725"|
-|info|String|체인 정보|"something info..."|
-
-account
-
-|Name|Type|Description|Example|
-|:---:|:---:|---|---|
-|id|int|사용자 account id|1|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|address|String|암호화폐 지갑 주소|"0x00115ag48r4vr86s6v4rbn"|
-|nickname|String|암호화폐 지갑 별칭|"my_first_account"|
-|info|String|지갑 정보|"something info..."|
-|ownerId|Int|ownerId|1|
-|chainId|Int|chainId|1|
-
-tokenSpec
-
-|Name|Type|Description|Example|
-|:---:|:---:|---|---|
-|id|int|사용자 tokenSpec id|1|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|address|String|token address|"0x00115ag48r4vr86s6v4rbn"|
-|name|String|tokenSpec name|"my_first_account"|
-|symbol|String|token symbol|"ETH"|
-|decimal|String|token decimal|"10"|
-|info|String|토큰 스펙 정보|"something info..."|
-|chainId|Int|chainId|1|
+|chain_id|int|사용자 chain id|1|
+|chain_name|String|chain name|"Ethereum"|
+|chain_info|String|체인 정보|"something info..."|
+|account_id|int|사용자 account id|1|
+|account_nickname|String|암호화폐 지갑 별칭|"my_first_account"|
+|account_info|String|지갑 정보|"something info..."|
+|tokenSpec_id|int|사용자 tokenSpec id|1|
+|tokenSpec_name|String|토큰명|"tokenSpec_name"|
+|tokenSpec_symbol|String|토큰 심볼|"ETH"|
+|tokenSpec_decimal|String|토큰 데시멀|"10"|
+|tokenSpec_info|String|토큰 스펙 정보|"something info..."|
 
 Error Message
 
@@ -880,7 +884,8 @@ Parameter
 
 |Name|Type|Description|Require|Example|
 |:---:|:---:|---|---|---|
-|walletUID|String|wallet UID|O|"walletUID0001"|
+|walletUID|String|지갑 UID|O|"walletUID_00000001"|
+
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
@@ -889,13 +894,11 @@ Parameter
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
-|id|Int|DB상의 wallet id|20|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|walletUID|String|wallet UID|"walletUID0001"|
-|email|String|wallet email|"test1@test.co.kr"|
-|name|String|wallet name|"테스터"|
-|info|Int|사용자 정보|1|
+|id|Int|DB상의 지갑 id|20|
+|walletUID|String|지갑 UID|O|"walletUID_00000001"|
+|email|String|지갑 email|"test1@test.co.kr"|
+|name|String|지갑 name|"테스터"|
+|info|String|사용자 정보|"information"|
 |elements|List\<customers>|해당 wallet의 customer 리스트|하단 참조|
 
 customers
@@ -903,13 +906,10 @@ customers
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|Int|customer id|1|
-|createdAt|String|생성 시간|"2021-06-03T07:11:28.175Z"|
-|updatedAt|String|업데이트 시간|"2021-06-03T07:11:28.175Z"|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|safeAccount|String|에이락 월렛 주소|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
-|publicKey|String|에이락 월렛 퍼블릭키|"tempPublicKey1622427282147"|
-|channel_name|Int|channel id 값|"고객사0001"|
-|wallet_nane|Int|wallet id|"wallet_name001"|
+|channel_id|Int|고객사id|1|
+|channel_name|String|고객사 명|"고객사0001"|
+|channel_info|String|고객사 정보|"information"|
 
 
 Error Message
@@ -943,15 +943,13 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 765
-ETag: W/"2fd-hnnyYmmRiYQ4a8LYzaltLWInQiI"
-Date: Mon, 07 Jun 2021 07:05:58 GMT
+Content-Length: 367
+ETag: W/"16f-UEWSrMs2VaT233OKUTDuEguBg4o"
+Date: Tue, 08 Jun 2021 09:12:25 GMT
 Connection: close
 
 {
   "id": 4,
-  "createdAt": "2021-06-07T02:25:19.691Z",
-  "updatedAt": null,
   "walletUID": "Tester01",
   "email": "test@a-fun.co.kr",
   "name": "테스터",
@@ -959,23 +957,30 @@ Connection: close
   "customers": [
     {
       "id": 3,
-      "createdAt": "2021-06-07T02:21:17.105Z",
-      "updatedAt": null,
       "customerUID": "tester01",
-      "safeAccount": "",
-      "publicKey": "",
-      "channel_name": "고객사0001",
-      "wallet_nane": "wallet_name001"
+      "channel": {
+        "id": 1,
+        "name": "고객사_01",
+        "info": "CO1"
+      }
     },
     {
-      "id": 4,
-      "createdAt": "2021-06-07T02:22:01.418Z",
-      "updatedAt": null,
-      "customerUID": "tester02",
-      "safeAccount": "1",
-      "publicKey": "1",
-      "channel_name": "고객사0001",
-      "wallet_nane": "wallet_name001"
+      "id": 5,
+      "customerUID": "tester01",
+      "channel": {
+        "id": 2,
+        "name": "고객사_02",
+        "info": "CO2"
+      }
+    },
+    {
+      "id": 6,
+      "customerUID": "tester01",
+      "channel": {
+        "id": 3,
+        "name": "고객사_03",
+        "info": "CO3"
+      }
     }
   ]
 }
@@ -1039,29 +1044,34 @@ Parameter
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|Int|지갑 id|1|
-|createdAt|String|생성 시간|"2021-06-03T07:11:28.175Z"|
-|updatedAt|String|업데이트 시간|"2021-06-03T07:11:28.175Z"|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|safeAccount|String|에이락 월렛 주소|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
-|publicKey|String|에이락 월렛 퍼블릭키|"tempPublicKey1622427282147"|
-|channel_name|String|고객사명|"고객사0001"|
-|wallet_nane|Int|wallet id|"wallet_name001"|
+|wallet_name|Int|wallet id|"wallet_name001"|
+|wallet_info|Int|wallet 정보|"wallet_information"|
+|channel_name|String|고객사 명|"고객사0001"|
+|channel_info|String|고객사 정보|"information"|
+|elements|List\<accounts>|해당 고객의 account 리스트|하단 참조|
 |elements|List\<assets>|해당 고객의 asset 리스트|하단 참조|
+
+account
+
+|Name|Type|Description|Example|
+|:---:|:---:|---|---|
+|id|int|사용자 asset id|1|
+|account_nickname|String|암호화폐 지갑 별칭|"my_first_account"|
+|account_info|String|지갑 정보|"something info..."|
 
 assets
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 asset id|1|
-|createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
-|updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |balance|String|리워드 잔고|"50000"|
-|customer_name|String|사용자 이름|"홍길동"|
-|account_nickname|String|계좌 별칭|"투자용계좌"|
 |chain_name|String|체인명|"Ethereum"|
+|chain_info|String|체인 정보|"Ethereum"|
 |tokenSpec_name|String|토큰명|"tokenSpec_name"|
 |tokenSpec_symbol|String|토큰 심볼|"ETH"|
 |tokenSpec_decimal|String|토큰 데시멀|"10"|
+|tokenSpec_info|String|토큰 스펙 정보|"10"|
 
 Error Message
 
@@ -1102,47 +1112,65 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 511
-ETag: W/"1ff-BVqjzpj9add5jyibwfQ8aTtW9M8"
-Date: Mon, 07 Jun 2021 06:50:55 GMT
+Content-Length: 513
+ETag: W/"201-v1TQIeNs/J4Br85HvSaLpZkWVGc"
+Date: Tue, 08 Jun 2021 09:33:53 GMT
 Connection: close
 
 {
-  "id": 1,
-  "createdAt": "2021-06-04T04:46:29.624Z",
-  "updatedAt": null,
   "customerUID": "customerUID_001",
-  "safeAccount": "에이락 앱에서 전달_Unique00801",
-  "publicKey": "에이락 앱에서 전달_Unique00801",
-  "channel_name": "고객사0001",
-  "wallet_name": "wallet_name001",
+  "wallet": {
+    "name": "테스터",
+    "info": ""
+  },
+  "channel": {
+    "name": "고객사_01",
+    "info": "CO1"
+  },
+  "accounts": [
+    {
+      "id": 1,
+      "nickname": "test_nick",
+      "info": null
+    },
+    {
+      "id": 3,
+      "nickname": "test_nick2",
+      "info": null
+    }
+  ],
   "assets": [
     {
       "id": 2,
-      "createdAt": "2021-06-04T05:44:18.280Z",
-      "updatedAt": null,
-      "balance": "5005",
-      "customer_name": "홍길동",
-      "account_nickname": "투자용계좌",
-      "chain_name": "Ethereum",
-      "tokenSpec_name": "tokenSpec_name",
-      "tokenSpec_symbol": "ETH",
-      "tokenSpec_decimal": "10",
+      "balance": "12005",
+      "chain": {
+        "name": "Ethereum",
+        "info": null
+      },
+      "tokenSpec": {
+        "name": "Ethereum",
+        "symbol": "ETH",
+        "decimals": "10",
+        "info": null
+      }
     },
     {
       "id": 4,
-      "createdAt": "2021-06-07T04:02:41.428Z",
-      "updatedAt": null,
       "balance": "0",
-      "customer_name": "홍길동",
-      "account_nickname": "투자용계좌",
-      "chain_name": "Ethereum",
-      "tokenSpec_name": "tokenSpec_name",
-      "tokenSpec_symbol": "ETH",
-      "tokenSpec_decimal": "10"
+      "chain": {
+        "name": "Ethereum",
+        "info": null
+      },
+      "tokenSpec": {
+        "name": "Ethereum",
+        "symbol": "ETH",
+        "decimals": "10",
+        "info": null
+      }
     }
   ]
 }
+
   ```
 
   <a href="#" class="btn--success">처음으로</a>
