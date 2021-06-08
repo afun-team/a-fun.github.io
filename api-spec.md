@@ -13,8 +13,6 @@ c-red { color: red }
 **customers**
 
 
-
-
 **customer**
 ----
   Returns json data about a customer info.
@@ -23,8 +21,8 @@ c-red { color: red }
 
 URL
 ```
-POST /customer HTTP/1.1
-Host: http://localhost:4000
+POST /v1/customer HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
@@ -48,6 +46,7 @@ Parameter
 
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
@@ -58,7 +57,7 @@ Sample
 Sample Call:
 
   ```javascript
-  POST http://localhost:4000/customer HTTP/1.1
+  POST https://api.alock.io/v1/customer HTTP/1.1
   content-type: application/json
   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 
@@ -111,8 +110,8 @@ Sample Respons:
 
 URL
 ```
-POST /wallet HTTP/1.1
-Host: http://localhost:4000
+POST /v1/wallet HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjcwNDQyN30.qpq_UF2ebwr2IcEtvsPaS8TMU0tVCWz3B3r_7p32MVQ
 ```
@@ -174,7 +173,7 @@ Sample
 Sample Call:
 
   ```javascript
-  POST http://localhost:4000/account HTTP/1.1
+  POST https://api.alock.io/v1/account HTTP/1.1
   content-type: application/json
   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 
@@ -258,8 +257,8 @@ Connection: close
 
 URL
 ```
-POST /reward HTTP/1.1
-Host: http://localhost:4000
+POST /v1/reward HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
@@ -305,7 +304,7 @@ Sample
 Sample Call:
 
   ```javascript
-POST http://localhost:4000/reward HTTP/1.1
+POST https://api.alock.io/v1/reward HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -371,8 +370,8 @@ Connection: close
 
 URL
 ```
-POST /assets HTTP/1.1
-Host: http://localhost:4000
+POST /v1/assets HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 ```
@@ -400,6 +399,7 @@ Parameter
 |elements|List\<assets>|해당 고객의 assets 리스트|하단 참조|
 
 assets
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 asset id|1|
@@ -411,6 +411,7 @@ assets
 |elements|\<tokenSpec>|해당 고객의 토큰스펙|하단 참조|
 
 chain
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 chain id|1|
@@ -421,6 +422,7 @@ chain
 |info|String|체인 정보|"something info..."|
 
 account
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 account id|1|
@@ -433,6 +435,7 @@ account
 |chainId|Int|chainId|1|
 
 tokenSpec
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 tokenSpec id|1|
@@ -457,7 +460,7 @@ Sample
 Sample Call:
 
   ```javascript
-POST http://localhost:4000/assets HTTP/1.1
+POST https://api.alock.io/v1/assets HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -608,8 +611,8 @@ Connection: close
 
 URL
 ```
-POST /accounts HTTP/1.1
-Host: http://localhost:4000
+POST /v1/accounts HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 ```
@@ -674,7 +677,7 @@ Sample
 Sample Call:
 
   ```javascript
-POST http://localhost:4000/accounts HTTP/1.1
+POST https://api.alock.io/v1/accounts HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -768,8 +771,8 @@ Connection: close
 
 URL
 ```
-POST /customers HTTP/1.1
-Host: http://localhost:4000
+POST /v1/customers HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 ```
@@ -819,7 +822,7 @@ Sample
 Sample Call:
 
   ```javascript
-POST http://localhost:4000/customers HTTP/1.1
+POST https://api.alock.io/v1/customers HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -891,8 +894,8 @@ Connection: close
 
 URL
 ```
-POST /rewards HTTP/1.1
-Host: http://localhost:4000
+POST /v1/rewards HTTP/1.1
+Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 ```
@@ -952,7 +955,7 @@ Sample
 Sample Call:
 
   ```javascript
-POST http://localhost:4000/rewards HTTP/1.1
+POST https://api.alock.io/v1/rewards HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
