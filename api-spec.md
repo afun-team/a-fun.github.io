@@ -148,6 +148,7 @@ Parameter
 |elements|List\<assets>|해당 고객의 asset 리스트|하단 참조|
 
 assets
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 asset id|1|
@@ -162,6 +163,7 @@ assets
 |tokenSpec_decimal|String|토큰 데시멀|"10"|
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
@@ -292,6 +294,7 @@ Parameter
 
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
@@ -443,6 +446,7 @@ tokenSpec
 |chainId|Int|chainId|1|
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
@@ -633,6 +637,7 @@ Parameter
 |elements|List\<accounts>|해당 고객의 지갑 리스트|하단 참조|
 
 accounts
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 account id|1|
@@ -646,6 +651,7 @@ accounts
 |elements|\<chain>|해당 고객의 체인|하단 참조|
 
 chain
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 chain id|1|
@@ -657,6 +663,7 @@ chain
 
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
@@ -787,6 +794,7 @@ Parameter
 |elements|List\<customers>|해당 wallet의 customer 리스트|하단 참조|
 
 customers
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|Int|customer id|1|
@@ -800,6 +808,7 @@ customers
 
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
@@ -922,6 +931,7 @@ Parameter
 |elements|\<asset>|해당 사용자의 asset 리스트|하단 참조|
 
 asset
+
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 asset id|1|
@@ -931,6 +941,7 @@ asset
 
 
 Error Message
+
 |error_code|error_description	|Description|
 |---|---|---|
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
