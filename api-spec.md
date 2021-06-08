@@ -1,17 +1,21 @@
 <style>
 c-red { color: red }
-h1 { display : none }
+h1 { display: none }
+hr { margin-bottom: 150px !important }
+api-title { font-size: 3em; font-weight: bold }
+.arrow { padding-top: 40px }
 </style>
 
-API List
-------
+<div style="font-size: 1.5em; font-weight: bold">API List</div>
+<hr style="margin-bottom: 20px !important">
 
 |API Name|Description|
-|:---:|:---:|
-|[customer🔗](#customer)|customer 등록 api|
-|[wallet🔗](#wallet)|wallet 생성 api|
-|[reward🔗](#reward)|reward 지급 api|
-|[assets🔗](#assets)|assets 조회 api|
+|:---:|:---|
+|[customer🔗](#customer)|customer 등록|
+|[reward🔗](#reward)|reward 지급|
+|[accounts🔗](#accounts)|account list 조회|
+|[rewards🔗](#rewards)|reward 지급내역들 조회|
+|[assets🔗](#assets)|assets 조회|
 
 
 
@@ -19,18 +23,21 @@ API List
 -내부용-
 
 |API Name|Description|
-|:---:|:---:|
-|[accounts🔗](#accounts)|account list 조회 api|
-|[customers🔗](#customers)|customer list 조회 api|
+|:---:|:---|
+|[customers🔗](#customers)|customer list 조회|
+|[wallet🔗](#wallet)|wallet 생성|
+
 
 
 ------
 
-**customer**
-----
-  Returns json data about a customer info.
+<api-title id="customer">customer</api-title>
+Returns json data about a customer info.
 
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -39,7 +46,7 @@ Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
-<span style="color:red; font-size : 14px">**Authorization의 Bearer 이하 내용은 에이락에서 전달</span>
+<span style="color:red; font-size : 14px">**Authorization: Bearer {고객사 AccessToken}</span>
 
 Parameter
 
@@ -50,7 +57,10 @@ Parameter
 |info|String|사용자 정보|X|"첫번째 테스트 유저"|
 
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -65,7 +75,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -81,7 +94,7 @@ Sample Call:
   }
   ```
 
-Sample Respons:
+Sample Response:
 
   ```javascript
   HTTP/1.1 200 OK
@@ -117,11 +130,13 @@ Sample Respons:
 
 
 
-**wallet**
-----
-  Returns json data about a wallet info.
+<api-title id="wallet">wallet</api-title>
+Returns json data about a wallet info.
 
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -130,7 +145,7 @@ Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjcwNDQyN30.qpq_UF2ebwr2IcEtvsPaS8TMU0tVCWz3B3r_7p32MVQ
 ```
-<span style="color:red; font-size : 14px">**Authorization의 Bearer 이하 내용은 에이락에서 전달</span>
+<span style="color:red; font-size : 14px">**Authorization: Bearer {고객사 AccessToken}</span>
 
 Parameter
 
@@ -147,7 +162,10 @@ Parameter
 |deviceId|String|기기 id(푸시 알림용)|O|"deviceId0001"|
 
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -183,7 +201,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -205,7 +226,7 @@ Sample Call:
   }
 
   ```
-Sample Respons:
+Sample Response:
 
   ```javascript
 HTTP/1.1 200 OK
@@ -255,7 +276,7 @@ Connection: close
 }
   ```
 
-<a href="#" class="btn--success">처음으로</a>
+  <a href="#" class="btn--success">처음으로</a>
 
 ------
 
@@ -266,12 +287,13 @@ Connection: close
 
 
 
+<api-title id="reward">reward</api-title>
+Returns json data about a asset balance.
 
-**reward**
-----
-  Returns json data about a asset balance.
-
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -294,7 +316,10 @@ Parameter
 |territory|String|국가 지역 코드|X|"KR"|
 
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -317,7 +342,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -336,7 +364,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
   "territory": "KR"
 }
   ```
-Sample Respons:
+Sample Response:
 
   ```javascript
 HTTP/1.1 200 OK
@@ -382,12 +410,14 @@ Connection: close
 
 
 
+<api-title id="assets">assets</api-title>
 
-**assets**
-----
   Returns json data about a asset list.
 
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -405,7 +435,10 @@ Parameter
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
 
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -476,7 +509,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -491,7 +527,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 }
   ```
 
-Sample Respons:
+Sample Response:
 
   ```javascript
 HTTP/1.1 200 OK
@@ -625,12 +661,13 @@ Connection: close
 -----
 
 
+<api-title id="accounts">accounts</api-title>
+Returns json data about a account list.
 
-**accounts**
-----
-  Returns json data about a account list.
-
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -648,7 +685,10 @@ Parameter
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
 
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -695,7 +735,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -710,7 +753,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 }
   ```
 
-  Sample Respons:
+Sample Response:
 
   ```javascript
 HTTP/1.1 200 OK
@@ -788,11 +831,13 @@ Connection: close
 
 
 
-**customers**
-----
-  Returns json data about a Customers list included in the wallet .
+<api-title id="customers">customers</api-title>
+Returns json data about a Customers list included in the wallet .
 
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -808,7 +853,10 @@ Parameter
 |:---:|:---:|---|---|---|
 |walletUID|String|wallet UID|O|"walletUID0001"|
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -842,7 +890,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -856,7 +907,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 }
   ```
 
-Sample Respons:
+Sample Response:
 
   ```javascript
 HTTP/1.1 200 OK
@@ -914,11 +965,13 @@ Connection: close
 
 
 
-**rewards**
-----
-  Returns json data about a Customer's rewards.
+<api-title id="rewards">rewards</api-title>
+Returns json data about a Customer's rewards.
 
-- **Request**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Request</strong>
+</div>
 
 URL
 ```
@@ -937,7 +990,10 @@ Parameter
 |type|String|사용자의 이벤트 타입|X|"transfer" or "signup"...|
 
 
-- **Response**
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Response</strong>
+</div>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -978,7 +1034,10 @@ Error Message
 |401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
 |500|error|error 내용|
 
-Sample
+<div class="arrow">
+  <img src="./arrow.png" alt=" > ">
+  <strong style="vertical-align: super">Sample</strong>
+</div>
 
 Sample Call:
 
@@ -994,7 +1053,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 }
   ```
 
-Sample Respons:
+Sample Response:
 
   ```javascript
 HTTP/1.1 200 OK
