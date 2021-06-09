@@ -50,11 +50,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>customerUID|String|고객사의 고객 고유 번호|O|"afun-UID_00000001"|
-|name|String|사용자 이름|O|"홍길동"|
-|info|String|사용자 정보|X|"첫번째 테스트 유저"|
 
 
 <div class="arrow">
@@ -88,9 +86,7 @@ Sample Call:
   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 
   {
-    "customerUID": "afun-UID_00000001",
-    "name": "홍길동",
-    "info": "첫번째 테스트 유저"
+    "customerUID": "afun-UID_00000001"
   }
   ```
 
@@ -145,7 +141,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>requestUID|String|각 고객사 앱에서 전송하는 유니크한 값|O|"requestUID_example_000001"|
@@ -272,7 +268,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|암호화된 계정값|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
@@ -423,7 +419,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
@@ -662,7 +658,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|암호화된 계정값|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
@@ -882,7 +878,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |walletUID|String|지갑 UID|O|"walletUID_00000001"|
 
@@ -1023,14 +1019,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 
 Parameter
 
-|Name|Type|Description|Require|Example|
+|Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
 |<c-red>publicKey|String|에이락 월렛 퍼블릭키|O|"tempPublicKey1622427282147"|
 |walletUID|String|지갑 UID|O|"walletUID_00000001"|
 |email|String|사용자 email|X|"test1@test.co.kr"|
-|name|String|사용자 이름|X|"홍길동"|
+|name|String|wallet 사용자 이름|X|"홍길동"|
 |info|String|사용자 정보|X|"info001"|
 |deviceType|String|기기 타입|O|"deviceType0001"|
 |deviceId|String|기기 id(푸시 알림용)|O|"deviceId0001"|
