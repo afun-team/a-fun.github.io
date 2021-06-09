@@ -1,7 +1,7 @@
 <style>
 c-red { color: red }
 h1 { display: none }
-hr { margin-bottom: 150px !important }
+hr { margin-bottom: 80px !important }
 api-title { font-size: 3em; font-weight: bold }
 .arrow { padding-top: 40px }
 </style>
@@ -36,7 +36,7 @@ Returns json data about a customer info.
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -57,7 +57,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 |Name|Type|Description|Example|
@@ -75,7 +75,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
@@ -128,7 +128,7 @@ Returns json data about a asset balance.
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -154,7 +154,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 <c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
@@ -181,7 +181,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
@@ -255,7 +255,7 @@ Returns json data about a account list.
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -276,7 +276,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 |Name|Type|Description|Example|
@@ -318,7 +318,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
@@ -406,7 +406,7 @@ Returns json data about a Customer's rewards.
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -428,7 +428,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 <c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
@@ -465,7 +465,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
@@ -645,7 +645,7 @@ Connection: close
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -666,7 +666,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 <c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
@@ -706,7 +706,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
@@ -865,7 +865,7 @@ Returns json data about a Customers list included in the wallet .
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -885,7 +885,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 |Name|Type|Description|Example|
@@ -917,7 +917,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
@@ -1005,7 +1005,7 @@ Returns json data about a wallet info.
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Request</strong>
+  <strong style="font-size:20px">Request</strong>
 </div>
 
 URL
@@ -1034,7 +1034,7 @@ Parameter
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Response</strong>
+  <strong style="font-size:20px">Response</strong>
 </div>
 
 |Name|Type|Description|Example|
@@ -1078,7 +1078,7 @@ Error Message
 
 <div class="arrow">
   <img src="./arrow.png" alt=" > ">
-  <strong style="vertical-align: super">Sample</strong>
+  <strong style="font-size:20px">Sample</strong>
 </div>
 
 Sample Call:
