@@ -35,7 +35,7 @@ api-title { font-size: 3em; font-weight: bold }
 Returns json data about a customer info.
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -56,7 +56,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -74,7 +74,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
@@ -127,7 +127,7 @@ Sample Response:
 Returns json data about a asset balance.
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -153,7 +153,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -180,7 +180,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
@@ -254,7 +254,7 @@ Connection: close
 Returns json data about a account list.
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -275,7 +275,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -317,7 +317,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
@@ -405,7 +405,7 @@ Connection: close
 Returns json data about a Customer's rewards.
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -427,7 +427,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -464,7 +464,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
@@ -644,7 +644,7 @@ Connection: close
   Returns json data about a asset list.
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -665,7 +665,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -705,7 +705,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
@@ -864,7 +864,7 @@ Connection: close
 Returns json data about a Customers list included in the wallet .
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -884,7 +884,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -916,7 +916,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
@@ -1004,7 +1004,7 @@ Connection: close
 Returns json data about a wallet info.
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
 </div>
 
@@ -1033,7 +1033,7 @@ Parameter
 
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
@@ -1077,7 +1077,7 @@ Error Message
 |500|error|error 내용|
 
 <div class="arrow">
-  <img src="./arrow.png" alt=" > ">
+  <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Sample</strong>
 </div>
 
