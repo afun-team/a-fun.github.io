@@ -285,7 +285,7 @@ Parameter
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|elements|List\<assets>|해당 고객의 지갑 리스트|하단 참조|
+|elements|List\<assets>|해당 고객의 asset 리스트|하단 참조|
 
 assets
 
@@ -659,7 +659,7 @@ Parameter
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|elements|List\<assets>|해당 고객의 assets 리스트|하단 참조|
+|elements|List\<assets>|해당 고객의 asset 리스트|하단 참조|
 
 assets
 
