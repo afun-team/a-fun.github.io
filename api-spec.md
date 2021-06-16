@@ -405,7 +405,9 @@ Parameter
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
-|type|String|사용자의 이벤트 타입|X|"transfer" or "signup"...|
+|type|String|사용자의 이벤트 타입. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회|X|"transfer" or "signup"...|
+|tokenSpecId|Int|해당 사용자에게 할당된 토큰. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회|X|1 or 2...|
+
 
 
 <div class="arrow">
@@ -888,6 +890,7 @@ customers
 |channel_id|Int|고객사id|1|
 |channel_name|String|고객사 명|"고객사0001"|
 |channel_info|String|고객사 정보|"information"|
+|assets_id|Int|asset id|1|
 
 
 Error Message
@@ -927,38 +930,39 @@ Date: Tue, 08 Jun 2021 09:12:25 GMT
 Connection: close
 
 {
-  "id": 4,
-  "walletUID": "Tester01",
-  "email": "test@a-fun.co.kr",
-  "name": "테스터",
-  "info": null,
+  "id": 1,
+  "walletUID": "walletUID0001",
+  "email": "test111@test.test",
+  "name": "김이름",
+  "info": "info001",
   "customers": [
     {
-      "id": 3,
-      "customerUID": "tester01",
+      "id": 1,
+      "customerUID": "customerUID_hw",
       "channel": {
         "id": 1,
         "name": "고객사_01",
         "info": "CO1"
-      }
+      },
+      "assets": [
+        {
+          "id": 1
+        }
+      ]
     },
     {
-      "id": 5,
-      "customerUID": "tester01",
+      "id": 7,
+      "customerUID": "customerUID_001",
       "channel": {
-        "id": 2,
-        "name": "고객사_02",
-        "info": "CO2"
-      }
-    },
-    {
-      "id": 6,
-      "customerUID": "tester01",
-      "channel": {
-        "id": 3,
-        "name": "고객사_03",
-        "info": "CO3"
-      }
+        "id": 1,
+        "name": "고객사_01",
+        "info": "CO1"
+      },
+      "assets": [
+        {
+          "id": 3
+        }
+      ]
     }
   ]
 }
