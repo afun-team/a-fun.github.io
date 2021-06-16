@@ -285,17 +285,15 @@ Parameter
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |customerUID|String|고객사의 고객 고유 번호|"customerUID_001"|
-|elements|List\<accounts>|해당 고객의 지갑 리스트|하단 참조|
+|elements|List\<assets>|해당 고객의 지갑 리스트|하단 참조|
 
-accounts
+assets
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
 |id|int|사용자 account id|1|
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
-|nickname|String|암호화폐 지갑 별칭|"my_first_account"|
-|info|String|지갑 정보|"something info..."|
 |elements|\<chain>|해당 고객의 체인|하단 참조|
 
 chain
@@ -347,36 +345,20 @@ Date: Mon, 07 Jun 2021 06:55:41 GMT
 Connection: close
 
 {
-  "id": 1,
-  "createdAt": "2021-06-04T04:46:29.624Z",
+  "id": 7,
+  "createdAt": "2021-06-09T08:38:28.048Z",
   "updatedAt": null,
   "customerUID": "customerUID_001",
-  "accounts": [
-    {
-      "id": 1,
-      "createdAt": "2021-06-04T05:37:47.800Z",
-      "updatedAt": null,
-      "nickname": "test_nick",
-      "info": null,
-      "chain": {
-        "id": 1,
-        "createdAt": "2021-06-04T04:37:00.496Z",
-        "updatedAt": null,
-        "name": "Ethereum",
-        "info": null
-      }
-    },
+  "assets": [
     {
       "id": 3,
-      "createdAt": "2021-06-04T05:37:47.800Z",
+      "createdAt": "2021-06-09T08:40:36.424Z",
       "updatedAt": null,
-      "nickname": "test_nick2",
-      "info": null,
       "chain": {
-        "id": 2,
-        "createdAt": "2021-06-04T04:37:09.110Z",
+        "id": 1,
+        "createdAt": "2021-06-09T01:05:07.518Z",
         "updatedAt": null,
-        "name": "Tether",
+        "name": "Ethereum",
         "info": null
       }
     }
