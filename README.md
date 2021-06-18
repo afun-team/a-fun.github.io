@@ -1,1 +1,1 @@
-# a-fun.github.io
+# docs.alock.io

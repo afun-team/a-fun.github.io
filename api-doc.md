@@ -7,9 +7,13 @@
 
 에이락 리워드 플랫폼은 고객사의 고객에게 암호화폐 리워드를 제공하기 위하여 구축된 서비스 플랫폼입니다. 이 문서에서는 고객사와 에이락 월렛이 각각 에이락 리워드 플랫폼 API 서버와 연동하기 위하여 필요한 정보를 제공합니다.
 
-📡 시스템 연동 프로세스 표는 링크를 참조해 주십시오.
+<br/>
 
-[https://drive.google.com/file/d/11kXWYE-OJfCxFN5Hc5vmO3ODPzB39Q_Q/view?usp=sharing](https://drive.google.com/file/d/11kXWYE-OJfCxFN5Hc5vmO3ODPzB39Q_Q/view?usp=sharing)
+📡 시스템 연동 프로세스
+
+![alt 'A-Fun Blockchain Platform-System Process'](images/A-FunBlockchainPlatform-SystemProcess.png)
+
+<br/>
 
 👩‍💻 연동 절차를 요약하면 아래와 같습니다.
 
@@ -20,11 +24,15 @@
 5. 고객사에서 고객에게 지급된 리워드 조회
 6. 에이락 월렛에서 고객에게 지급된 리워드 조회
 
+<br/>
+
 ✅  에이락 리워드 플랫폼과 연동하기 위하여 사전에 준비하여야 하는 사항은 아래와 같습니다.
 
 1. 고객사 accessToken - 에이락에서 고객사에 전달
 2. 고객 등록 여부를 고객사에 전달한 callback URL
 3. 고객사 앱의 custom URL scheme 또는 deep link 등(선택 사항)
+
+<br/>
 
 🔗 에이락 리워드 플랫폼의 API 서버의 URL은 다음과 같습니다.
 
@@ -36,9 +44,13 @@ https://api.alock.io/v1/{api-url}
 - 항상 요청 프로토콜의 header에 Authorization 항목에 고객사의 토큰이 들어있어야 합니다.
 - 요청에 필요한 parameter는 json 방식을 사용합니다.
 
+<br/>
+
 <h2 id="api-개요">API 개요</h2>
 
 📌 API 목록 및 개략적인 내용은 다음과 같습니다.
+
+<br/>
 
 1. **고객 정보 등록**
 
@@ -57,6 +69,9 @@ https://api.alock.io/v1/{api-url}
     - Response
         - 고객 식별 토큰(UserToken)
         - 에이락 월렛 설치 여부(boolean)
+
+<br/>
+
 2. **고객 지갑 호출**
 
     ```
@@ -70,6 +85,9 @@ https://api.alock.io/v1/{api-url}
         - 고객 식별 토큰(UserToken)
     - Response
         - N/A
+
+<br/>
+
 3. **고객 지갑 등록** - 에이락 월렛 내부에서만 사용하는 API 입니다.
 
     ```
@@ -91,6 +109,9 @@ https://api.alock.io/v1/{api-url}
         - deviceId
     - Response
         - 고객 등록 여부
+
+<br/>
+
 4. **리워드 지급 요청**
 
     ```
@@ -111,6 +132,9 @@ https://api.alock.io/v1/{api-url}
         - 거래 지역
     - Response
         - 리워드 지급 내역(rewards)
+
+<br/>
+
 5. **자산 내역 요청**
 
     ```jsx
@@ -125,6 +149,9 @@ https://api.alock.io/v1/{api-url}
         - 고객 식별 토큰(UserToken)
     - Response
         - 토큰 잔고 내역(assets)
+
+<br/>
+
 6. **리워드 지급 내역 요청**
 
     ```jsx
@@ -139,6 +166,9 @@ https://api.alock.io/v1/{api-url}
         - 고객 식별 토큰(UserToken)
     - Response
         - 리워드 지급 내역(rewards)
+
+<br/>
+
 7. **리워드 지급 상세 내역 요청**
 
     ```jsx
@@ -152,6 +182,9 @@ https://api.alock.io/v1/{api-url}
         - 리워드 지급 내역 id
     - Response
         - 리워드 상세 내역(rewards)
+
+<br/>
+
 8. **출금 요청 - 에이락 월렛 내부에서만 사용하는 API 입니다.**
 
     ```jsx
@@ -168,6 +201,9 @@ https://api.alock.io/v1/{api-url}
         - 암호화된 출금 요청 정보
     - Response
         - 출금 상세 내역(transfers)
+
+<br/>
+
 9. **출금 내역 요청**
 
     ```jsx
@@ -181,6 +217,9 @@ https://api.alock.io/v1/{api-url}
         - 고객 식별 토큰(accessToken)
     - Response
         - 출금 상세 내역(transfers)
+
+<br/>
+
 10. **출금 상세 내역 요청**
 
     ```jsx
@@ -196,6 +235,8 @@ https://api.alock.io/v1/{api-url}
     - Response
         - 출금 상세 내역(transfers)
 
+<br/>
+
 <h2 id="api-상세-내역">API 상세 내역</h2>
 
-[https://a-fun.github.io/api-spec](https://a-fun.github.io/api-spec)
+[https://docs.alock.io/api-spec](api-spec.md)
