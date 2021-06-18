@@ -157,7 +157,7 @@ Parameter
   <strong style="font-size:20px">Response</strong>
 </div>
 
-<c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
+<c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -165,7 +165,6 @@ Parameter
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |balance|String|리워드 잔고|"10000"|
-|account_nickname|String|계좌 별칭|"투자용계좌"|
 |chain_name|String|체인명|"Ethereum"|
 |tokenSpec_name|String|토큰명|"tokenSpec_name"|
 |tokenSpec_symbol|String|토큰 심볼|"ETH"|
@@ -218,9 +217,6 @@ Connection: close
   "createdAt": "2021-06-04T05:44:18.280Z",
   "updatedAt": null,
   "balance": "12005",
-  "account": {
-    "nickname": "test_nick"
-  },
   "chain": {
     "name": "Ethereum"
   },
@@ -291,7 +287,7 @@ assets
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
-|id|int|사용자 account id|1|
+|id|int|사용자 asset id|1|
 |createdAt|String|생성 시각|"2021-05-21T07:17:15.653Z"|
 |updatedAt|String|업데이트 시각|"2021-05-21T07:17:15.653Z"|
 |elements|\<chain>|해당 고객의 체인|하단 참조|
@@ -415,7 +411,7 @@ Parameter
   <strong style="font-size:20px">Response</strong>
 </div>
 
-<c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
+<c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -433,7 +429,6 @@ Parameter
 |channel_id|Int|고객사id|1|
 |channel_name|String|고객사명|"고객사0001"|
 |channel_info|String|고객사 정보|"고객사_info"|
-|account_nickname|String|계좌 별칭|"투자용계좌"|
 |chain_name|String|체인명|"Ethereum"|
 |tokenSpec_name|String|토큰명|"tokenSpec_name"|
 |tokenSpec_symbol|String|토큰 심볼|"ETH"|
@@ -496,11 +491,6 @@ Connection: close
       "name": "고객사_01",
       "info": "CO1"
     },
-    "account": {
-      "id": 1,
-      "nickname": "test_nick",
-      "info": null
-    },
     "chain": {
       "id": 1,
       "name": "Ethereum",
@@ -534,11 +524,6 @@ Connection: close
       "name": "고객사_01",
       "info": "CO1"
     },
-    "account": {
-      "id": 1,
-      "nickname": "test_nick",
-      "info": null
-    },
     "chain": {
       "id": 1,
       "name": "Ethereum",
@@ -571,11 +556,6 @@ Connection: close
       "id": 1,
       "name": "고객사_01",
       "info": "CO1"
-    },
-    "account": {
-      "id": 1,
-      "nickname": "test_nick",
-      "info": null
     },
     "chain": {
       "id": 1,
@@ -653,7 +633,7 @@ Parameter
   <strong style="font-size:20px">Response</strong>
 </div>
 
-<c-red>account_nickname : account parameter에 속한 nickname의 의미 (하단 Sample Resonse 참조)</c-red>
+<c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
 
 |Name|Type|Description|Example|
 |:---:|:---:|---|---|
@@ -672,9 +652,6 @@ assets
 |chain_id|int|사용자 chain id|1|
 |chain_name|String|chain name|"Ethereum"|
 |chain_info|String|체인 정보|"something info..."|
-|account_id|int|사용자 account id|1|
-|account_nickname|String|암호화폐 지갑 별칭|"my_first_account"|
-|account_info|String|지갑 정보|"something info..."|
 |tokenSpec_id|int|사용자 tokenSpec id|1|
 |tokenSpec_name|String|토큰명|"tokenSpec_name"|
 |tokenSpec_symbol|String|토큰 심볼|"ETH"|
@@ -735,7 +712,6 @@ Connection: close
       "balance": "6005",
       "ownerId": 1,
       "chainId": 1,
-      "accountId": 1,
       "tokenSpecId": 1,
       "chain": {
         "id": 1,
@@ -745,16 +721,6 @@ Connection: close
         "regNumber": "0001",
         "info": null,
         "apiToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbklkIjoxLCJpYXQiOjE2MjI3ODE0MjB9.AVyRaeeJCDqCS_gw4WMNpdUB9hEUsb0n09XvMjRoC1M"
-      },
-      "account": {
-        "id": 1,
-        "createdAt": "2021-06-04T05:37:47.800Z",
-        "updatedAt": null,
-        "address": "0x00",
-        "nickname": "test_nick",
-        "info": null,
-        "ownerId": 1,
-        "chainId": 1
       },
       "tokenSpec": {
         "id": 1,
@@ -775,7 +741,6 @@ Connection: close
       "balance": "0",
       "ownerId": 1,
       "chainId": 1,
-      "accountId": 4,
       "tokenSpecId": 1,
       "chain": {
         "id": 1,
@@ -785,16 +750,6 @@ Connection: close
         "regNumber": "0001",
         "info": null,
         "apiToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFpbklkIjoxLCJpYXQiOjE2MjI3ODE0MjB9.AVyRaeeJCDqCS_gw4WMNpdUB9hEUsb0n09XvMjRoC1M"
-      },
-      "account": {
-        "id": 4,
-        "createdAt": "2021-06-07T03:27:17.639Z",
-        "updatedAt": null,
-        "address": "0xF93e202436CB458E99DC12c33bD1875A32eF491b",
-        "nickname": "테스트 계정",
-        "info": null,
-        "ownerId": 3,
-        "chainId": 1
       },
       "tokenSpec": {
         "id": 1,
@@ -1031,16 +986,7 @@ Parameter
 |wallet_info|Int|wallet 정보|"wallet_information"|
 |channel_name|String|고객사 명|"고객사0001"|
 |channel_info|String|고객사 정보|"information"|
-|elements|List\<accounts>|해당 고객의 account 리스트|하단 참조|
 |elements|List\<assets>|해당 고객의 asset 리스트|하단 참조|
-
-account
-
-|Name|Type|Description|Example|
-|:---:|:---:|---|---|
-|id|int|사용자 asset id|1|
-|account_nickname|String|암호화폐 지갑 별칭|"my_first_account"|
-|account_info|String|지갑 정보|"something info..."|
 
 assets
 
@@ -1070,7 +1016,7 @@ Error Message
 Sample Call:
 
   ```javascript
-  POST https://api.alock.io/v1/account HTTP/1.1
+  POST https://api.alock.io/v1/asset HTTP/1.1
   content-type: application/json
   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 
@@ -1109,18 +1055,6 @@ Connection: close
     "name": "고객사_01",
     "info": "CO1"
   },
-  "accounts": [
-    {
-      "id": 1,
-      "nickname": "test_nick",
-      "info": null
-    },
-    {
-      "id": 3,
-      "nickname": "test_nick2",
-      "info": null
-    }
-  ],
   "assets": [
     {
       "id": 2,
