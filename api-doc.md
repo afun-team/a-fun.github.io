@@ -142,13 +142,25 @@ https://api.alock.io/v1/{api-url}
     암호화폐의 네트워크/화폐종류에 따라 분류하여 각각의 잔고 목록을 반환합니다.
     ```
 
-    - URL: /assets
-    - Header
-        - 고객사 API 토큰(accessToken)
-    - Request
-        - 고객 식별 토큰(UserToken)
-    - Response
-        - 토큰 잔고 내역(assets)
+   **고객사 API 토큰 호출 시**
+
+   - URL: /assets
+   - Header
+     - 고객사 API 토큰(accessToken)
+   - Request
+     - 고객 식별 토큰(UserToken)
+   - Response
+     - 토큰 잔고 내역(assets)
+
+   **지갑 API 토큰 호출 시**
+
+   - URL: /assets
+   - Header
+     - 지갑 API 토큰(accessToken)
+   - Request
+     - 고객 금고 주소(safeAccount)
+   - Response
+     - 토큰 잔고 내역(assets)
 
 <br/>
 
@@ -159,13 +171,25 @@ https://api.alock.io/v1/{api-url}
     1000건 단위 페이지 또는 리워드 지급 일자, 암호화폐 종류 등에 따라 분류하여 반환하는 기능을 추후 추가할 예정입니다.
     ```
 
-    - URL: /rewards
-    - Header
-        - 고객사 API 토큰(accessToken)
-    - Request
-        - 고객 식별 토큰(UserToken)
-    - Response
-        - 리워드 지급 내역(rewards)
+   **고객사 API 토큰 호출 시**
+
+   - URL: /rewards
+   - Header
+     - 고객사 API 토큰(accessToken)
+   - Request
+     - 고객 식별 토큰(UserToken)
+   - Response
+     - 리워드 지급 내역(rewards)
+
+   **지갑 API 토큰 호출 시**
+
+   - URL: /rewards
+   - Header
+     - 지갑 API 토큰(accessToken)
+   - Request
+     - 고객 금고 주소(safeAccount)
+   - Response
+     - 리워드 지급 내역(rewards)
 
 <br/>
 
