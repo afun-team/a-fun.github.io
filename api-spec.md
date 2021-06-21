@@ -268,6 +268,7 @@ Parameter
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|암호화된 계정값|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
+
 고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
 지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
 
@@ -630,6 +631,7 @@ Parameter
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|암호화된 계정값|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
+
 고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
 지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
 
