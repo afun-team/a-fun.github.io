@@ -80,7 +80,7 @@ https://api.alock.io/v1/{api-url}
     고객 식별 토큰
     ```
 
-    - GET:  https://afun.page.link/wallets/?userToken={UserToken}
+    - Firebase Dynamic Link  :  https://afun.page.link/?link=https://afun.page.link/?userToken%3D{userToken}&apn=com.wallets.afun
     - Request:
         - 고객 식별 토큰(UserToken)
     - Response
