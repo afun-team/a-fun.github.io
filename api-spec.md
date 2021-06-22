@@ -964,7 +964,7 @@ Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjcwNDQyN30.qpq_UF2ebwr2IcEtvsPaS8TMU0tVCWz3B3r_7p32MVQ
 ```
-<span style="color:red; font-size : 14px">**Authorization: Bearer {고객사 AccessToken}</span>
+<span style="color:red; font-size : 14px">**Authorization: Bearer {지갑 AccessToken}</span>
 
 Parameter
 
