@@ -145,7 +145,7 @@ Parameter
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
 |<c-red>requestUID|String|각 고객사 앱에서 전송하는 유니크한 값|O|"requestUID_example_000001"|
-|date|String|고객사에서 전달한 date 정보|O|"something.."|
+|date|String|고객사에서 전달한 date 정보|O|"2021-05-21T07:17:15.653Z"|
 |value|String|고객사에서 사용자가 사용한 금액|O|"1"|
 |currency|String|통화 화폐|X|"KRW"|
 |type|String|사용자의 이벤트 타입|O|"transfer" or "signup"...|
