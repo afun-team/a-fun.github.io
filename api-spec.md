@@ -854,6 +854,7 @@ customers
 |channel_name|String|고객사 명|"고객사0001"|
 |channel_info|String|고객사 정보|"information"|
 |assets_id|Int|asset id|1|
+|safeAccount|String|에이락 월렛 주소|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
 
 
 Error Message
@@ -896,12 +897,13 @@ Connection: close
   "id": 1,
   "walletUID": "walletUID0001",
   "email": "test111@test.test",
-  "name": "김이름",
+  "name": "김고객",
   "info": "info001",
   "customers": [
     {
       "id": 1,
-      "customerUID": "customerUID_hw",
+      "customerUID": "customerUID_000",
+      "safeAccount": "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b",
       "channel": {
         "id": 1,
         "name": "고객사_01",
@@ -916,6 +918,7 @@ Connection: close
     {
       "id": 7,
       "customerUID": "customerUID_001",
+      "safeAccount": "0x332a1d47bfcdbefh7d3dc16d5b3172bbc8c31d46",
       "channel": {
         "id": 1,
         "name": "고객사_01",
@@ -924,6 +927,9 @@ Connection: close
       "assets": [
         {
           "id": 3
+        },
+        {
+          "id": 15
         }
       ]
     }
