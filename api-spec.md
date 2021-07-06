@@ -895,35 +895,35 @@ Date: Tue, 08 Jun 2021 09:12:25 GMT
 Connection: close
 
 {
-  "id": 1,
-  "walletUID": "walletUID0001",
-  "email": "test111@test.test",
+  "id": 115,
+  "walletUID": "walletUID00411000000012",
+  "email": "test@a-fun.co.kr",
   "name": "김고객",
   "info": "info001",
   "customers": [
     {
-      "id": 1,
-      "customerUID": "customerUID_000",
-      "safeAccount": "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b",
+      "id": 104,
+      "customerUID": "customerUID_00100015",
+      "safeAccount": "Unique000701112434",
+      "keyIndex": 0,
       "channel": {
         "id": 1,
         "name": "고객사_01",
-        "info": "CO1"
+        "info": "CO1",
+        "customURLScheme": "https://afunuser.page.link/token"
       },
-      "assets": [
-        {
-          "id": 1
-        }
-      ]
+      "assets": []
     },
     {
-      "id": 7,
-      "customerUID": "customerUID_001",
-      "safeAccount": "0x332a1d47bfcdbefh7d3dc16d5b3172bbc8c31d46",
+      "id": 167,
+      "customerUID": "customerUID_0010001580002",
+      "safeAccount": "Unique0007011124320",
+      "keyIndex": 1,
       "channel": {
         "id": 1,
         "name": "고객사_01",
-        "info": "CO1"
+        "info": "CO1",
+        "customURLScheme": "https://afunuser.page.link/token"
       },
       "assets": [
         {
@@ -1039,6 +1039,7 @@ Sample Call:
   {
     "userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0",
     "safeAccount": "에이락 앱에서 전달",
+    "keyIndex": 1,
     "publicKey": "에이락 앱에서 전달",
     "walletUID": "deviceType00001",
     "email": "test1@test.co.kr",
