@@ -855,6 +855,7 @@ customers
 |channel_info|String|고객사 정보|"information"|
 |assets_id|Int|asset id|1|
 |safeAccount|String|에이락 월렛 주소|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
+|keyIndex|Index|에이락 월렛 주소 생성 시 사용된 인덱스 값|1|
 
 
 Error Message
@@ -977,7 +978,8 @@ Parameter
 |Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
 |<c-red>userToken|String|고객 식별 토큰|O|"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0"|
-|<c-red>safeAccount|String|에이락 월렛 주소|X|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
+|<c-red>safeAccount|String|에이락 월렛 주소|O|"0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"|
+|<c-red>keyIndex|Int|에이락 월렛 주소 생성 시 사용된 인덱스 값|O|1|
 |<c-red>publicKey|String|에이락 월렛 퍼블릭키|O|"tempPublicKey1622427282147"|
 |walletUID|String|지갑 UID|O|"walletUID_00000001"|
 |email|String|사용자 email|X|"test1@test.co.kr"|
