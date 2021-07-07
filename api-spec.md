@@ -26,6 +26,7 @@ api-title { font-size: 3em; font-weight: bold }
 |:---:|:---|
 |[customers🔗](#customers)|customer list 조회|
 |[wallet🔗](#wallet)|wallet 생성|
+|[customerKeyIndex🔗](#customerKeyIndex)|customer의 KeyIndex 중 max 값 조회|
 
 
 
@@ -827,7 +828,7 @@ Parameter
 
 |Name|Type|Description|Required|Example|
 |:---:|:---:|---|---|---|
-|walletUID|String|지갑 UID|O|"walletUID_00000001"|
+|<c-red>walletUID|String|지갑 UID|O|"walletUID_00000001"|
 
 
 <div class="arrow">
@@ -1110,3 +1111,88 @@ Connection: close
 
 ------
 
+
+
+
+
+
+
+
+<api-title id="customerKeyIndex">customerKeyIndex</api-title>
+Returns json data about a customer's value of keyIndex.
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Request</strong>
+</div>
+
+URL
+```
+POST /v1/customerKeyIndex HTTP/1.1
+Host: https://api.alock.io
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMzIwMDQ1NX0.0WZltGzY_L_yidkslXgDE2pGfv_GT90CPn4wJX3IVR8
+```
+
+Parameter
+
+|Name|Type|Description|Required|Example|
+|:---:|:---:|---|---|---|
+|<c-red>walletUID|String|지갑 UID|O|"walletUID_00000001"|
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Response</strong>
+</div>
+
+|Name|Type|Description|Example|
+|:---:|:---:|---|---|
+|keyIndex|Int|safeAccount 생성 시 사용된 index 값|1|
+
+
+Error Message
+
+|error_code|error_description	|Description|
+|---|---|---|
+|401|error: 'Authorization failed!' or error: 'API Token is not match!'|인증이 실패했거나 API토큰이 불일치할 경우|
+|500|error|error 내용|
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Sample</strong>
+</div>
+
+Sample Call:
+
+  ```javascript
+  POST https://api.alock.io/v1/customerKeyIndex HTTP/1.1
+  content-type: application/json
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMzIwMDQ1NX0.0WZltGzY_L_yidkslXgDE2pGfv_GT90CPn4wJX3IVR8
+
+  {
+    "walletUID": "walletUID00411000000012"
+  }
+
+  ```
+Sample Response:
+
+  ```javascript
+HTTP/1.1 200 OK
+Date: Wed, 07 Jul 2021 00:16:39 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 16
+Connection: close
+Server: nginx/1.20.0
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+ETag: W/"10-mJg0EN9+8aDw8ZN01wViOnNvDko"
+
+{
+  "keyIndex": 186
+}
+
+  ```
+
+  <a href="#" class="btn--success">처음으로</a>
+
+------
