@@ -25,6 +25,7 @@ api-title { font-size: 3em; font-weight: bold }
 | :-------------------------------------: | :--------------------------------- |
 |        [customers🔗](#customers)        | customer list 조회                 |
 |           [wallet🔗](#wallet)           | wallet 생성                        |
+|           [transfer🔗](#transfer)           | reward 출금                        |
 | [customerKeyIndex🔗](#customerKeyIndex) | customer의 KeyIndex 중 max 값 조회 |
 
 ---
@@ -1152,6 +1153,106 @@ Connection: close
     }
   }
 ]
+}
+
+```
+
+<a href="#" class="btn--success">처음으로</a>
+
+---
+
+<api-title id="transfer">transfer</api-title>
+Returns json data about a transfer info.
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Request</strong>
+</div>
+
+URL
+
+```
+POST /v1/transfer HTTP/1.1
+Host: https://api.alock.io
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
+```
+
+Parameter
+
+|       Name        |  Type  | Description                           | Required | Example                                                                                                                                                                     |
+| :---------------: | :----: | ------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <c-red>safeAccount  | String | 에이락 월렛 주소                        | O        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
+| to | String | 리워드를 받는 주소  | O        | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0"                                                                                                                                                 |
+|       assetId        | String | asset id           | O        | 1                                                                                                                                                  |
+|       value       | String | 출금할 리워드 수량       | O        | "1"                                                                                                                                                                         |
+
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Response</strong>
+</div>
+
+<c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
+
+|       Name        |  Type  | Description   | Example                    |
+| :---------------: | :----: | ------------- | -------------------------- |
+|        id         |  Int   | asset id      | 83                         |
+|     createdAt     | String | 생성 시각     | "2021-07-09T05:08:29.029Z" |
+|     updatedAt     | String | 업데이트 시각 | "2021-07-09T05:08:29.029Z" |
+|      balance      | String | 리워드 잔고   | "19"                    |
+|    ownerId     | String | 고객 id        | 1                 |
+|  chainId   | String | 체인 id        | 1           |
+| tokenSpecId  | String | 토큰 id     | 1                      |
+
+Error Message
+
+| error_code | error_description                                                  | Description                               |
+| ---------- | ------------------------------------------------------------------ | ----------------------------------------- |
+| 401        | error: 'balance(19) is zero or less than value(20)' | 잔고가 0이거나 잔고 보다 출금량이 많을 경우 |
+| 500        | error                                                              | error 내용                                |
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Sample</strong>
+</div>
+
+Sample Call:
+
+```javascript
+POST https://api.alock.io/v1/transfer HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
+
+{
+
+	"safeAccount": "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b",
+	"to": "ToAddress",
+	"assetId": 1,
+	"value": "1"
+}
+```
+
+Sample Response:
+
+```javascript
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 121
+ETag: W/"87-EAvSOLtv83DV7aSPGeTBzel+V00"
+Date: Mon, 12 Jul 2021 01:19:02 GMT
+Connection: close
+
+{
+  "id": 1,
+  "createdAt": "2021-07-09T05:08:29.029Z",
+  "updatedAt": null,
+  "balance": "19",
+  "ownerId": 1,
+  "chainId": 1,
+  "tokenSpecId": 1
 }
 
 ```
