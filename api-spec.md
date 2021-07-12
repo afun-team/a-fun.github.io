@@ -721,7 +721,7 @@ Connection: close
 
 ---
 
-<api-title id="rewards">transfers</api-title>
+<api-title id="transfers">transfers</api-title>
 Returns json data about a Customer's transfers.
 
 <div class="arrow">
@@ -824,7 +824,7 @@ Connection: close
 
 [
   {
-    "id": 49,
+    "id": 20,
     "createdAt": "2021-05-21T07:17:15.653Z",
     "updatedAt": "2021-05-21T07:17:15.653Z",
     "state": "requested",
