@@ -16,6 +16,8 @@ api-title { font-size: 3em; font-weight: bold }
 | [accounts🔗](#accounts) | account list 조회      |
 |  [rewards🔗](#rewards)  | reward 지급내역들 조회 |
 |   [assets🔗](#assets)   | assets 조회            |
+|   [transfers🔗](#transfers)   | transfers 조회            |
+
 
 -내부용-
 
@@ -712,6 +714,152 @@ Connection: close
   }
 ]
 }
+
+```
+
+<a href="#" class="btn--success">처음으로</a>
+
+---
+
+<api-title id="rewards">transfers</api-title>
+Returns json data about a Customer's transfers.
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Request</strong>
+</div>
+
+URL
+
+```
+POST /v1/transfers HTTP/1.1
+Host: https://api.alock.io
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
+```
+
+Parameter
+
+|        Name        |  Type  | Description                                                                            | Required | Example                                                                                                                                                                     |
+| :----------------: | :----: | -------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  <c-red>userToken  | String | 고객 식별 토큰                                                                         | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| <c-red>safeAccount | String | 에이락 월렛 주소                                                                       | X        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
+|    tokenSpecId     |  Int   | 해당 사용자에게 할당된 토큰. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회 | X        | 1 or 2...                                                                                                                                                                   |
+
+고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
+지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Response</strong>
+</div>
+
+<c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
+
+|       Name        |  Type  | Description                           | Example                    |
+| :---------------: | :----: | ------------------------------------- | -------------------------- | 
+|        id         |  Int   | 트랜스퍼 ID                             | 20                         |
+|     createdAt     | String | 생성 시각                             | "2021-05-21T07:17:15.653Z" |
+|     updatedAt     | String | 업데이트 시각                         | "2021-05-21T07:17:15.653Z" |
+|    state     | String | 리워드의 출금 상태 | "requested"          |
+|       message        | String | 전송 메시지           | "something message.."         |
+|       from        | String | 리워드가 출금되는 주소                  | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                 |
+|       to       | String | 리워드를 받는 주소       | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0"                    |
+|     value      | String | 전송하는 리워드 수량                             | "1"                      |
+|     gasLimit     | String | 최대 가스량                        | null                          |
+|      gasPrice       | String | 가스 비용                           | null                      |
+|      fee       | String | 트랜잭션 수수료                      | null                   |
+|    data     |  Int   | 출금 정보                              | null                          |
+|   owner_id    | String | customer id                             | 1               |
+|   owner_customerUID    | String | 고객사의 고객 고유 번호                           | "customerUID_001"             |
+|    owner_safeAccount     | String | 에이락 월렛 주소                               | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                 |
+|  chain_id   | String | 체인 id                                | 1           |
+|  chain_name   | String | 체인명                                | "Ethereum"           |
+|  chain_info   | String | 체인 정보                                | null           |
+| tokenSpec_id  | String | 토큰 id                             | 1                      |
+| tokenSpec_name  | String | 토큰명                             | "Ethereum"                      |
+| tokenSpec_symbol  | String | 토큰 심볼                             | "ETH"                      |
+| tokenSpec_decimal | String | 토큰 데시멀                           | "10"                       |
+|   asset_id   | String | 자산 id                           | 1                    |
+|   asset_balance   | String | 리워드 잔고                           | "50000"                    |
+|   ethTxid   | String | 이더리움 트랜잭션 id                           | null                   |
+
+Error Message
+
+| error_code | error_description                                                  | Description                               |
+| ---------- | ------------------------------------------------------------------ | ----------------------------------------- |
+| 401        | error: 'Authorization failed!' or error: 'API Token is not match!' | 인증이 실패했거나 API토큰이 불일치할 경우 |
+| 500        | error                                                              | error 내용                                |
+
+<div class="arrow">
+  <img src="./arrow_16px.png" alt=" > ">
+  <strong style="font-size:20px">Sample</strong>
+</div>
+
+Sample Call:
+
+```javascript
+POST https://api.alock.io/v1/transfers HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
+
+{
+"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjMwNDUzOTR9.M0kAkn0ge8kwWhs5m4OaeLhYEnAt6Tm78_Y3aB22QXg",
+"safeAccount":"에이락 앱에서 전달_Unique00801",
+"tokenSpecId": 1
+}
+```
+
+Sample Response:
+
+```javascript
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 6575
+ETag: W/"19af-Etl1Ko1A5IhedVICofAyumYc3x8"
+Date: Tue, 08 Jun 2021 08:21:05 GMT
+Connection: close
+
+[
+  {
+    "id": 49,
+    "createdAt": "2021-05-21T07:17:15.653Z",
+    "updatedAt": "2021-05-21T07:17:15.653Z",
+    "state": "requested",
+    "message": null,
+    "from": "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b",
+    "to": "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0",
+    "value": "1",
+    "gasLimit": null,
+    "gasPrice": null,
+    "fee": null,
+    "data": null,
+    "owner": {
+      "id": 1,
+      "customerUID": "customerUID_001",
+      "safeAccount": "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"
+    },
+    "chain": {
+      "id": 1,
+      "name": "Ethereum",
+      "info": null
+    },
+    "tokenSpec": {
+      "id": 1,
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "decimals": "10"
+    },
+    "asset": {
+      "id": 1,
+      "balance": "50000"
+    },
+    "ethTxId": null
+  }
+]
+
 
 ```
 
