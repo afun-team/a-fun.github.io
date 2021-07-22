@@ -9,29 +9,28 @@ api-title { font-size: 3em; font-weight: bold }
 <div style="font-size: 1.5em; font-weight: bold">API List</div>
 <hr style="margin-bottom: 20px !important">
 
-|        API Name         | Description            |
-| :---------------------: | :--------------------- |
-| [customer🔗](#customer) | customer 등록          |
-|   [reward🔗](#reward)   | reward 지급            |
-| [accounts🔗](#accounts) | account list 조회      |
-|  [rewards🔗](#rewards)  | reward 지급내역들 조회 |
-|   [assets🔗](#assets)   | assets 조회            |
-|   [transfers🔗](#transfers)   | transfers 조회            |
-
+|              API Name              | Description        |
+| :--------------------------------: | :----------------- |
+|    [Customer🔗](#Customer-link)    | customer 등록      |
+|      [Reward🔗](#Reward-link)      | reward 지급        |
+|  [Account List🔗](#Accounts-link)  | account list 조회  |
+|   [Reward List🔗](#Rewards-link)   | reward list 조회   |
+|    [Asset List🔗](#Assets-link)    | asset list 조회    |
+| [Transfer List🔗](#Transfers-link) | transfer list 조회 |
 
 -내부용-
 
-|                API Name                 | Description                        |
-| :-------------------------------------: | :--------------------------------- |
-|        [customers🔗](#customers)        | customer list 조회                 |
-|           [wallet🔗](#wallet)           | wallet 생성                        |
-|           [transfer🔗](#transfer)           | reward 출금                        |
-| [customerKeyIndex🔗](#customerKeyIndex) | customer의 KeyIndex 중 max 값 조회 |
+|                   API Name                   | Description                        |
+| :------------------------------------------: | :--------------------------------- |
+|      [Customer List🔗](#Customers-link)      | customer list 조회                 |
+|           [Wallet🔗](#Wallet-link)           | wallet 생성                        |
+|         [Transfer🔗](#Transfer-link)         | reward 출금                        |
+| [CustomerKeyIndex🔗](#CustomerKeyIndex-link) | customer의 KeyIndex 중 max 값 조회 |
 
 ---
 
-<api-title id="customer">customer</api-title>
-Returns json data about a customer info.
+<api-title id="Customer-link">Customer</api-title>
+Register as an A-Fun customer.
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -111,8 +110,8 @@ Connection: close
 
 ---
 
-<api-title id="reward">reward</api-title>
-Returns json data about a asset balance.
+<api-title id="Reward-link">Reward</api-title>
+Rewards can be paid through the Reward API.
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -221,7 +220,7 @@ Connection: close
 
 ---
 
-<api-title id="accounts">accounts</api-title>
+<api-title id="Accounts-link">Account List</api-title>
 Returns json data about a account list.
 
 <div class="arrow">
@@ -232,7 +231,7 @@ Returns json data about a account list.
 URL
 
 ```
-POST /v1/accounts HTTP/1.1
+POST /v1/accountList HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
@@ -295,7 +294,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/accounts HTTP/1.1
+POST https://api.alock.io/v1/accountList HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -345,7 +344,7 @@ Connection: close
 
 ---
 
-<api-title id="rewards">rewards</api-title>
+<api-title id="Rewards-link">Reward List</api-title>
 Returns json data about a Customer's rewards.
 
 <div class="arrow">
@@ -356,7 +355,7 @@ Returns json data about a Customer's rewards.
 URL
 
 ```
-POST /v1/rewards HTTP/1.1
+POST /v1/rewardList HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
@@ -418,7 +417,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/rewards HTTP/1.1
+POST https://api.alock.io/v1/rewardList HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -550,7 +549,7 @@ Connection: close
 
 ---
 
-<api-title id="assets">assets</api-title>
+<api-title id="Assets-link">Asset List</api-title>
 
 Returns json data about a asset list.
 
@@ -562,7 +561,7 @@ Returns json data about a asset list.
 URL
 
 ```
-POST /v1/assets HTTP/1.1
+POST /v1/assetList HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
@@ -623,7 +622,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/assets HTTP/1.1
+POST https://api.alock.io/v1/assetList HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -722,7 +721,7 @@ Connection: close
 
 ---
 
-<api-title id="transfers">transfers</api-title>
+<api-title id="Transfers-link">Transfer List</api-title>
 Returns json data about a Customer's transfers.
 
 <div class="arrow">
@@ -733,7 +732,7 @@ Returns json data about a Customer's transfers.
 URL
 
 ```
-POST /v1/transfers HTTP/1.1
+POST /v1/transferList HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
@@ -757,33 +756,33 @@ Parameter
 
 <c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
 
-|       Name        |  Type  | Description                           | Example                    |
-| :---------------: | :----: | ------------------------------------- | -------------------------- | 
-|        id         |  Int   | 트랜스퍼 ID                             | 20                         |
-|     createdAt     | String | 생성 시각                             | "2021-05-21T07:17:15.653Z" |
-|     updatedAt     | String | 업데이트 시각                         | "2021-05-21T07:17:15.653Z" |
-|    state     | String | 리워드의 출금 상태 | "requested"          |
-|       message        | String | 전송 메시지           | "something message.."         |
-|       from        | String | 리워드가 출금되는 주소                  | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                 |
-|       to       | String | 리워드를 받는 주소       | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0"                    |
-|     value      | String | 전송하는 리워드 수량                             | "1"                      |
-|     gasLimit     | String | 최대 가스량                        | null                          |
-|      gasPrice       | String | 가스 비용                           | null                      |
-|      fee       | String | 트랜잭션 수수료                      | null                   |
-|    data     |  Int   | 출금 정보                              | null                          |
-|   owner_id    | String | customer id                             | 1               |
-|   owner_customerUID    | String | 고객사의 고객 고유 번호                           | "customerUID_001"             |
-|    owner_safeAccount     | String | 에이락 월렛 주소                               | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                 |
-|  chain_id   | String | 체인 id                                | 1           |
-|  chain_name   | String | 체인명                                | "Ethereum"           |
-|  chain_info   | String | 체인 정보                                | null           |
-| tokenSpec_id  | String | 토큰 id                             | 1                      |
-| tokenSpec_name  | String | 토큰명                             | "Ethereum"                      |
-| tokenSpec_symbol  | String | 토큰 심볼                             | "ETH"                      |
-| tokenSpec_decimal | String | 토큰 데시멀                           | "10"                       |
-|   asset_id   | String | 자산 id                           | 1                    |
-|   asset_balance   | String | 리워드 잔고                           | "50000"                    |
-|   ethTxid   | String | 이더리움 트랜잭션 id                           | null                   |
+|       Name        |  Type  | Description             | Example                                      |
+| :---------------: | :----: | ----------------------- | -------------------------------------------- |
+|        id         |  Int   | 트랜스퍼 ID             | 20                                           |
+|     createdAt     | String | 생성 시각               | "2021-05-21T07:17:15.653Z"                   |
+|     updatedAt     | String | 업데이트 시각           | "2021-05-21T07:17:15.653Z"                   |
+|       state       | String | 리워드의 출금 상태      | "requested"                                  |
+|      message      | String | 전송 메시지             | "something message.."                        |
+|       from        | String | 리워드가 출금되는 주소  | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
+|        to         | String | 리워드를 받는 주소      | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0" |
+|       value       | String | 전송하는 리워드 수량    | "1"                                          |
+|     gasLimit      | String | 최대 가스량             | null                                         |
+|     gasPrice      | String | 가스 비용               | null                                         |
+|        fee        | String | 트랜잭션 수수료         | null                                         |
+|       data        |  Int   | 출금 정보               | null                                         |
+|     owner_id      | String | customer id             | 1                                            |
+| owner_customerUID | String | 고객사의 고객 고유 번호 | "customerUID_001"                            |
+| owner_safeAccount | String | 에이락 월렛 주소        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
+|     chain_id      | String | 체인 id                 | 1                                            |
+|    chain_name     | String | 체인명                  | "Ethereum"                                   |
+|    chain_info     | String | 체인 정보               | null                                         |
+|   tokenSpec_id    | String | 토큰 id                 | 1                                            |
+|  tokenSpec_name   | String | 토큰명                  | "Ethereum"                                   |
+| tokenSpec_symbol  | String | 토큰 심볼               | "ETH"                                        |
+| tokenSpec_decimal | String | 토큰 데시멀             | "10"                                         |
+|     asset_id      | String | 자산 id                 | 1                                            |
+|   asset_balance   | String | 리워드 잔고             | "50000"                                      |
+|      ethTxid      | String | 이더리움 트랜잭션 id    | null                                         |
 
 Error Message
 
@@ -800,7 +799,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/transfers HTTP/1.1
+POST https://api.alock.io/v1/transferList HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -870,7 +869,7 @@ Connection: close
 
 ## **아래 내용은 에이락 내부용입니다.**
 
-<api-title id="customers">customers</api-title>
+<api-title id="Customers-link">Customer List</api-title>
 Returns json data about a Customers list included in the wallet .
 
 <div class="arrow">
@@ -881,7 +880,7 @@ Returns json data about a Customers list included in the wallet .
 URL
 
 ```
-POST /v1/customers HTTP/1.1
+POST /v1/customerList HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
@@ -935,7 +934,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/customers HTTP/1.1
+POST https://api.alock.io/v1/customerList HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -1005,7 +1004,7 @@ Connection: close
 
 ---
 
-<api-title id="wallet">wallet</api-title>
+<api-title id="Wallet-link">Wallet</api-title>
 Returns json data about a wallet info.
 
 <div class="arrow">
@@ -1161,7 +1160,7 @@ Connection: close
 
 ---
 
-<api-title id="transfer">transfer</api-title>
+<api-title id="Transfer-link">Transfer</api-title>
 Returns json data about a transfer info.
 
 <div class="arrow">
@@ -1180,13 +1179,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|       Name        |  Type  | Description                           | Required | Example                                                                                                                                                                     |
-| :---------------: | :----: | ------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <c-red>safeAccount  | String | 에이락 월렛 주소                        | O        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
-| to | String | 리워드를 받는 주소  | O        | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0"                                                                                                                                                 |
-|       assetId        | String | asset id           | O        | 1                                                                                                                                                  |
-|       value       | String | 출금할 리워드 수량       | O        | "1"                                                                                                                                                                         |
-
+|        Name        |  Type  | Description        | Required | Example                                      |
+| :----------------: | :----: | ------------------ | -------- | -------------------------------------------- |
+| <c-red>safeAccount | String | 에이락 월렛 주소   | O        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
+|         to         | String | 리워드를 받는 주소 | O        | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0" |
+|      assetId       | String | asset id           | O        | 1                                            |
+|       value        | String | 출금할 리워드 수량 | O        | "1"                                          |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -1195,22 +1193,22 @@ Parameter
 
 <c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
 
-|       Name        |  Type  | Description   | Example                    |
-| :---------------: | :----: | ------------- | -------------------------- |
-|        id         |  Int   | asset id      | 83                         |
-|     createdAt     | String | 생성 시각     | "2021-07-09T05:08:29.029Z" |
-|     updatedAt     | String | 업데이트 시각 | "2021-07-09T05:08:29.029Z" |
-|      balance      | String | 리워드 잔고   | "19"                    |
-|    ownerId     | String | 고객 id        | 1                 |
-|  chainId   | String | 체인 id        | 1           |
-| tokenSpecId  | String | 토큰 id     | 1                      |
+|    Name     |  Type  | Description   | Example                    |
+| :---------: | :----: | ------------- | -------------------------- |
+|     id      |  Int   | asset id      | 83                         |
+|  createdAt  | String | 생성 시각     | "2021-07-09T05:08:29.029Z" |
+|  updatedAt  | String | 업데이트 시각 | "2021-07-09T05:08:29.029Z" |
+|   balance   | String | 리워드 잔고   | "19"                       |
+|   ownerId   | String | 고객 id       | 1                          |
+|   chainId   | String | 체인 id       | 1                          |
+| tokenSpecId | String | 토큰 id       | 1                          |
 
 Error Message
 
-| error_code | error_description                                                  | Description                               |
-| ---------- | ------------------------------------------------------------------ | ----------------------------------------- |
+| error_code | error_description                                   | Description                                 |
+| ---------- | --------------------------------------------------- | ------------------------------------------- |
 | 401        | error: 'balance(19) is zero or less than value(20)' | 잔고가 0이거나 잔고 보다 출금량이 많을 경우 |
-| 500        | error                                                              | error 내용                                |
+| 500        | error                                               | error 내용                                  |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -1261,7 +1259,7 @@ Connection: close
 
 ---
 
-<api-title id="customerKeyIndex">customerKeyIndex</api-title>
+<api-title id="customerKeyIndex-link">CustomerKeyIndex</api-title>
 Returns json data about a customer's value of keyIndex.
 
 <div class="arrow">
