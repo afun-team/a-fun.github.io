@@ -11,21 +11,21 @@ api-title { font-size: 3em; font-weight: bold }
 
 |              API Name              | Description        |
 | :--------------------------------: | :----------------- |
-|    [Customer🔗](#Customer-link)    | customer 등록      |
-|      [Reward🔗](#Reward-link)      | reward 지급        |
-|  [Account List🔗](#Accounts-link)  | account list 조회  |
-|   [Reward List🔗](#Rewards-link)   | reward list 조회   |
-|    [Asset List🔗](#Assets-link)    | asset list 조회    |
-| [Transfer List🔗](#Transfers-link) | transfer list 조회 |
+|    [Customer🔗](#Customer-link)    | Customer 등록      |
+|      [Reward🔗](#Reward-link)      | Reward 지급        |
+|  [Account List🔗](#Accounts-link)  | Account list 조회  |
+|   [Reward List🔗](#Rewards-link)   | Reward list 조회   |
+|    [Asset List🔗](#Assets-link)    | Asset list 조회    |
+| [Transfer List🔗](#Transfers-link) | Transfer list 조회 |
 
 -내부용-
 
 |                   API Name                   | Description                        |
 | :------------------------------------------: | :--------------------------------- |
-|      [Customer List🔗](#Customers-link)      | customer list 조회                 |
-|           [Wallet🔗](#Wallet-link)           | wallet 생성                        |
-|         [Transfer🔗](#Transfer-link)         | reward 출금                        |
-| [CustomerKeyIndex🔗](#CustomerKeyIndex-link) | customer의 KeyIndex 중 max 값 조회 |
+|      [Customer List🔗](#Customers-link)      | Customer list 조회                 |
+|           [Wallet🔗](#Wallet-link)           | Wallet 생성                        |
+|         [Transfer🔗](#Transfer-link)         | Reward 출금                        |
+| [CustomerKeyIndex🔗](#CustomerKeyIndex-link) | Customer의 KeyIndex 중 max 값 조회 |
 
 ---
 
@@ -1259,7 +1259,7 @@ Connection: close
 
 ---
 
-<api-title id="customerKeyIndex-link">CustomerKeyIndex</api-title>
+<api-title id="CustomerKeyIndex-link">CustomerKeyIndex</api-title>
 Returns json data about a customer's value of keyIndex.
 
 <div class="arrow">
