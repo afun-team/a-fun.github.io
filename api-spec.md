@@ -9,20 +9,20 @@ api-title { font-size: 3em; font-weight: bold }
 <div style="font-size: 1.5em; font-weight: bold">API List</div>
 <hr style="margin-bottom: 20px !important">
 
-|              API Name              | Description        |
-| :--------------------------------: | :----------------- |
-|    [Customer🔗](#Customer-link)    | Customer 등록      |
-|      [Reward🔗](#Reward-link)      | Reward 지급        |
-|  [Account List🔗](#Accounts-link)  | Account list 조회  |
-|   [Reward List🔗](#Rewards-link)   | Reward list 조회   |
-|    [Asset List🔗](#Assets-link)    | Asset list 조회    |
-| [Transfer List🔗](#Transfers-link) | Transfer list 조회 |
+|            API Name            | Description        |
+| :----------------------------: | :----------------- |
+|  [Customer🔗](#Customer-link)  | Customer 등록      |
+|    [Reward🔗](#Reward-link)    | Reward 지급        |
+|  [Accounts🔗](#Accounts-link)  | Account list 조회  |
+|   [Rewards🔗](#Rewards-link)   | Reward list 조회   |
+|    [Assets🔗](#Assets-link)    | Asset list 조회    |
+| [Transfers🔗](#Transfers-link) | Transfer list 조회 |
 
 -내부용-
 
 |                   API Name                   | Description                        |
 | :------------------------------------------: | :--------------------------------- |
-|      [Customer List🔗](#Customers-link)      | Customer list 조회                 |
+|        [Customers🔗](#Customers-link)        | Customer list 조회                 |
 |           [Wallet🔗](#Wallet-link)           | Wallet 생성                        |
 |         [Transfer🔗](#Transfer-link)         | Reward 출금                        |
 | [CustomerKeyIndex🔗](#CustomerKeyIndex-link) | Customer의 KeyIndex 중 max 값 조회 |
@@ -30,7 +30,9 @@ api-title { font-size: 3em; font-weight: bold }
 ---
 
 <api-title id="Customer-link">Customer</api-title>
-Register as an A-Fun customer.
+
+- Register as an Alock wallet customer.
+- 에이락 월렛 서비스 고객 등록
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -46,13 +48,13 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
 
-<span style="color:red; font-size : 14px">\*\*Authorization: Bearer {고객사 AccessToken}</span>
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken} \*\*</span>
 
 Parameter
 
-|        Name        |  Type  | Description             | Required | Example             |
-| :----------------: | :----: | ----------------------- | -------- | ------------------- |
-| <c-red>customerUID | String | 고객사의 고객 고유 번호 | O        | "afun-UID_00000001" |
+|    Name     |  Type  | Description             | Required | Example             |
+| :---------: | :----: | ----------------------- | -------- | ------------------- |
+| customerUID | String | 고객사의 고객 고유 번호 | <c-red>O | "afun-UID_00000001" |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -61,7 +63,7 @@ Parameter
 
 |   Name    |  Type   | Description  | Example                                                                                                                                                                     |
 | :-------: | :-----: | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| userToken |   Int   | userToken    | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDAyODd9.w78SqeGRc-gmZPLwxTsy6LwfCiBrKm4UKnw4riUb_2M" |
+| userToken | String  | userToken    | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDAyODd9.w78SqeGRc-gmZPLwxTsy6LwfCiBrKm4UKnw4riUb_2M" |
 | installed | Boolean | 앱 설치 여부 | "true"                                                                                                                                                                      |
 
 Error Message
@@ -111,7 +113,9 @@ Connection: close
 ---
 
 <api-title id="Reward-link">Reward</api-title>
-Rewards can be paid through the Reward API.
+
+- Rewards can be paid through the Reward API.
+- 리워드 지급 요청과 리워드 지급 API
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -127,24 +131,26 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
 
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken} \*\*</span>
+
 Parameter
 
-|       Name        |  Type  | Description                           | Required | Example                                                                                                                                                                     |
-| :---------------: | :----: | ------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <c-red>userToken  | String | 고객 식별 토큰                        | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| <c-red>requestUID | String | 각 고객사 앱에서 전송하는 유니크한 값 | O        | "requestUID_example_000001"                                                                                                                                                 |
-|       date        | String | 고객사에서 전달한 date 정보           | O        | "2021-05-21T07:17:15.653Z"                                                                                                                                                  |
-|       value       | String | 고객사에서 사용자가 사용한 금액       | O        | "1"                                                                                                                                                                         |
-|     currency      | String | 통화 화폐                             | X        | "KRW"                                                                                                                                                                       |
-|       type        | String | 사용자의 이벤트 타입                  | O        | "transfer" or "signup"...                                                                                                                                                   |
-|     territory     | String | 국가 지역 코드                        | X        | "KR"                                                                                                                                                                        |
+|    Name    |  Type  | Description                           | Required | Example                                                                                                                                                                     |
+| :--------: | :----: | ------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userToken  | String | 고객 식별 토큰                        | <c-red>O | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| requestUID | String | 각 고객사 앱에서 전송하는 유니크한 값 | <c-red>O | "requestUID_example_000001"                                                                                                                                                 |
+|    date    | String | 고객사에서 전달한 date 정보           | <c-red>O | "2021-05-21T07:17:15.653Z"                                                                                                                                                  |
+|   value    | String | 고객사에서 사용자가 사용한 금액       | <c-red>O | "1"                                                                                                                                                                         |
+|  currency  | String | 통화 화폐                             | X        | "KRW"                                                                                                                                                                       |
+|    type    | String | 사용자의 이벤트 타입                  | <c-red>O | "transfer" or "signup"...                                                                                                                                                   |
+| territory  | String | 국가 지역 코드                        | X        | "KR"                                                                                                                                                                        |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
-<c-red>channel_name : channel Object에 속한 name의 의미 (하단 Sample Resonse 참조)</c-red>
+<c-red>channel_name : channel Object에 속한 name의 의미합니다. (하단 Sample Resonse 참조)</c-red>
 
 |       Name        |  Type  | Description   | Example                    |
 | :---------------: | :----: | ------------- | -------------------------- |
@@ -220,8 +226,10 @@ Connection: close
 
 ---
 
-<api-title id="Accounts-link">Account List</api-title>
-Returns json data about a account list.
+<api-title id="Accounts-link">Accounts</api-title>
+
+- Returns data about a account list.
+- account 리스트 반환
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -231,7 +239,7 @@ Returns json data about a account list.
 URL
 
 ```
-POST /v1/accountList HTTP/1.1
+POST /v1/accounts HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
@@ -239,13 +247,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|        Name        |  Type  | Description      | Required | Example                                                                                                                                                                     |
-| :----------------: | :----: | ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  <c-red>userToken  | String | 암호화된 계정값  | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| <c-red>safeAccount | String | 에이락 월렛 주소 | X        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
+|    Name     |  Type  | Description      | Required      | Example                                                                                                                                                                     |
+| :---------: | :----: | ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  userToken  | String | 암호화된 계정값  | <c-red>O or X | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| safeAccount | String | 에이락 월렛 주소 | <c-red>O or X | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
 
-고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
-지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken}로 호출 시, userToken 값이 요구되며,
+Authorization: Bearer {지갑APP AccessToken}로 호출 시,safeAccount 값을 요구합니다. \*\*</span>
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -294,7 +302,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/accountList HTTP/1.1
+POST https://api.alock.io/v1/accounts HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -344,8 +352,10 @@ Connection: close
 
 ---
 
-<api-title id="Rewards-link">Reward List</api-title>
-Returns json data about a Customer's rewards.
+<api-title id="Rewards-link">Rewards</api-title>
+
+- Returns data about a Customer's rewards.
+- 고객들의 리워드 정보 반환
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -355,7 +365,7 @@ Returns json data about a Customer's rewards.
 URL
 
 ```
-POST /v1/rewardList HTTP/1.1
+POST /v1/rewards HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
@@ -363,15 +373,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 
 Parameter
 
-|        Name        |  Type  | Description                                                                            | Required | Example                                                                                                                                                                     |
-| :----------------: | :----: | -------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  <c-red>userToken  | String | 고객 식별 토큰                                                                         | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| <c-red>safeAccount | String | 에이락 월렛 주소                                                                       | X        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
-|        type        | String | 사용자의 이벤트 타입. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회        | X        | "transfer" or "signup"...                                                                                                                                                   |
-|    tokenSpecId     |  Int   | 해당 사용자에게 할당된 토큰. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회 | X        | 1 or 2...                                                                                                                                                                   |
+|    Name     |  Type  | Description                                                                            | Required      | Example                                                                                                                                                                     |
+| :---------: | :----: | -------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  userToken  | String | 고객 식별 토큰                                                                         | <c-red>O or X | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| safeAccount | String | 에이락 월렛 주소                                                                       | <c-red>O or X | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
+|    type     | String | 사용자의 이벤트 타입. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회        | X             | "transfer" or "signup"...                                                                                                                                                   |
+| tokenSpecId |  Int   | 해당 사용자에게 할당된 토큰. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회 | X             | 1 or 2...                                                                                                                                                                   |
 
-고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
-지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken}로 호출 시, userToken 값이 요구되며,
+Authorization: Bearer {지갑APP AccessToken}로 호출 시,safeAccount 값을 요구합니다. \*\*</span>
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -417,7 +427,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/rewardList HTTP/1.1
+POST https://api.alock.io/v1/rewards HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -549,9 +559,10 @@ Connection: close
 
 ---
 
-<api-title id="Assets-link">Asset List</api-title>
+<api-title id="Assets-link">Assets</api-title>
 
-Returns json data about a asset list.
+- Returns data about a asset list.
+- asset 리스트 반환
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -561,7 +572,7 @@ Returns json data about a asset list.
 URL
 
 ```
-POST /v1/assetList HTTP/1.1
+POST /v1/assets HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
@@ -569,13 +580,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 
 Parameter
 
-|        Name        |  Type  | Description      | Required | Example                                                                                                                                                                     |
-| :----------------: | :----: | ---------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  <c-red>userToken  | String | 암호화된 계정값  | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| <c-red>safeAccount | String | 에이락 월렛 주소 | X        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
+|    Name     |  Type  | Description      | Required      | Example                                                                                                                                                                     |
+| :---------: | :----: | ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  userToken  | String | 고객 식별 토큰   | <c-red>O or X | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| safeAccount | String | 에이락 월렛 주소 | <c-red>O or X | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
 
-고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
-지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken}로 호출 시, userToken 값이 요구되며,
+Authorization: Bearer {지갑APP AccessToken}로 호출 시,safeAccount 값을 요구합니다. \*\*</span>
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -622,7 +633,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/assetList HTTP/1.1
+POST https://api.alock.io/v1/assets HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -721,8 +732,10 @@ Connection: close
 
 ---
 
-<api-title id="Transfers-link">Transfer List</api-title>
-Returns json data about a Customer's transfers.
+<api-title id="Transfers-link">Transfers</api-title>
+
+- Returns data about a Customer's transfers.
+- 고객들의 가상자산 거래내역 반환
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -732,7 +745,7 @@ Returns json data about a Customer's transfers.
 URL
 
 ```
-POST /v1/transferList HTTP/1.1
+POST /v1/transfers HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
@@ -740,14 +753,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsI
 
 Parameter
 
-|        Name        |  Type  | Description                                                                            | Required | Example                                                                                                                                                                     |
-| :----------------: | :----: | -------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  <c-red>userToken  | String | 고객 식별 토큰                                                                         | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| <c-red>safeAccount | String | 에이락 월렛 주소                                                                       | X        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
-|    tokenSpecId     |  Int   | 해당 사용자에게 할당된 토큰. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회 | X        | 1 or 2...                                                                                                                                                                   |
+|    Name     |  Type  | Description                                                                            | Required      | Example                                                                                                                                                                     |
+| :---------: | :----: | -------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  userToken  | String | 고객 식별 토큰                                                                         | <c-red>O or X | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| safeAccount | String | 에이락 월렛 주소                                                                       | <c-red>O or X | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
+| tokenSpecId |  Int   | 해당 사용자에게 할당된 토큰. 값이 없으면 전체 조회, 값이 있으면 해당하는 데이터만 조회 | X             | 1 or 2...                                                                                                                                                                   |
 
-고객사 API Token을 통해 호출 시, userToken 값이 요구되며,
-지갑 API Token을 통해 호출 시, safeAccount 값이 요구됩니다.
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken}로 호출 시, userToken 값이 요구되며,
+Authorization: Bearer {지갑APP AccessToken}로 호출 시,safeAccount 값을 요구합니다. \*\*</span>
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -799,7 +812,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/transferList HTTP/1.1
+POST https://api.alock.io/v1/transfers HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -869,8 +882,10 @@ Connection: close
 
 ## **아래 내용은 에이락 내부용입니다.**
 
-<api-title id="Customers-link">Customer List</api-title>
-Returns json data about a Customers list included in the wallet .
+<api-title id="Customers-link">Customers</api-title>
+
+- Returns data about a Customers list included in the wallet
+- 고객의 정보와 지갑 정보 반환
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -880,17 +895,19 @@ Returns json data about a Customers list included in the wallet .
 URL
 
 ```
-POST /v1/customerList HTTP/1.1
+POST /v1/customers HTTP/1.1
 Host: https://api.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 ```
 
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {지갑APP AccessToken} \*\*</span>
+
 Parameter
 
-|       Name       |  Type  | Description | Required | Example              |
-| :--------------: | :----: | ----------- | -------- | -------------------- |
-| <c-red>walletUID | String | 지갑 UID    | O        | "walletUID_00000001" |
+|   Name    |  Type  | Description | Required | Example              |
+| :-------: | :----: | ----------- | -------- | -------------------- |
+| walletUID | String | 지갑 UID    | <c-red>O | "walletUID_00000001" |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -934,7 +951,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/customerList HTTP/1.1
+POST https://api.alock.io/v1/customers HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -1005,8 +1022,9 @@ Connection: close
 ---
 
 <api-title id="Wallet-link">Wallet</api-title>
-Returns json data about a wallet info.
 
+- Returns data about a wallet info.
+- 고객의 지갑 생성과 정보 반환
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
@@ -1021,22 +1039,22 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjcwNDQyN30.qpq_UF2ebwr2IcEtvsPaS8TMU0tVCWz3B3r_7p32MVQ
 ```
 
-<span style="color:red; font-size : 14px">\*\*Authorization: Bearer {지갑 AccessToken}</span>
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {지갑APP AccessToken} \*\*</span>
 
 Parameter
 
-|        Name        |  Type  | Description                               | Required | Example                                                                                                                                                                     |
-| :----------------: | :----: | ----------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  <c-red>userToken  | String | 고객 식별 토큰                            | O        | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| <c-red>safeAccount | String | 에이락 월렛 주소                          | O        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
-|  <c-red>keyIndex   |  Int   | 에이락 월렛 주소 생성 시 사용된 인덱스 값 | O        | 1                                                                                                                                                                           |
-|  <c-red>publicKey  | String | 에이락 월렛 퍼블릭키                      | O        | "tempPublicKey1622427282147"                                                                                                                                                |
-|     walletUID      | String | 지갑 UID                                  | O        | "walletUID_00000001"                                                                                                                                                        |
-|       email        | String | 사용자 email                              | X        | "test1@test.co.kr"                                                                                                                                                          |
-|        name        | String | wallet 사용자 이름                        | X        | "홍길동"                                                                                                                                                                    |
-|        info        | String | 사용자 정보                               | X        | "info001"                                                                                                                                                                   |
-|     deviceType     | String | 기기 타입                                 | O        | "deviceType0001"                                                                                                                                                            |
-|      deviceId      | String | 기기 id(푸시 알림용)                      | O        | "deviceId0001"                                                                                                                                                              |
+|    Name     |  Type  | Description                               | Required | Example                                                                                                                                                                     |
+| :---------: | :----: | ----------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  userToken  | String | 고객 식별 토큰                            | <c-red>O | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
+| safeAccount | String | 에이락 월렛 주소                          | <c-red>O | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b"                                                                                                                                |
+|  keyIndex   |  Int   | 에이락 월렛 주소 생성 시 사용된 인덱스 값 | <c-red>O | 1                                                                                                                                                                           |
+|  publicKey  | String | 에이락 월렛 퍼블릭키                      | <c-red>O | "tempPublicKey1622427282147"                                                                                                                                                |
+|  walletUID  | String | 지갑 UID                                  | <c-red>O | "walletUID_00000001"                                                                                                                                                        |
+|    email    | String | 사용자 email                              | X        | "test1@test.co.kr"                                                                                                                                                          |
+|    name     | String | wallet 사용자 이름                        | X        | "홍길동"                                                                                                                                                                    |
+|    info     | String | 사용자 정보                               | X        | "info001"                                                                                                                                                                   |
+| deviceType  | String | 기기 타입                                 | <c-red>O | "deviceType0001"                                                                                                                                                            |
+|  deviceId   | String | 기기 id(푸시 알림용)                      | <c-red>O | "deviceId0001"                                                                                                                                                              |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -1161,8 +1179,9 @@ Connection: close
 ---
 
 <api-title id="Transfer-link">Transfer</api-title>
-Returns json data about a transfer info.
 
+- Returns data about a transfer info.
+- 리워드를 출금하고 잔고를 반환
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
@@ -1177,14 +1196,16 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
 
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {지갑APP AccessToken} \*\*</span>
+
 Parameter
 
-|        Name        |  Type  | Description        | Required | Example                                      |
-| :----------------: | :----: | ------------------ | -------- | -------------------------------------------- |
-| <c-red>safeAccount | String | 에이락 월렛 주소   | O        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
-|         to         | String | 리워드를 받는 주소 | O        | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0" |
-|      assetId       | String | asset id           | O        | 1                                            |
-|       value        | String | 출금할 리워드 수량 | O        | "1"                                          |
+|    Name     |  Type  | Description        | Required | Example                                      |
+| :---------: | :----: | ------------------ | -------- | -------------------------------------------- |
+| safeAccount | String | 에이락 월렛 주소   | <c-red>O | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
+|     to      | String | 리워드를 받는 주소 | <c-red>O | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0" |
+|   assetId   | String | asset id           | <c-red>O | 1                                            |
+|    value    | String | 출금할 리워드 수량 | <c-red>O | "1"                                          |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
@@ -1260,8 +1281,9 @@ Connection: close
 ---
 
 <api-title id="CustomerKeyIndex-link">CustomerKeyIndex</api-title>
-Returns json data about a customer's value of keyIndex.
 
+- Returns data about a customer's value of keyIndex.
+- 고객의 keyIndex 중 max 값을 반환
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Request</strong>
@@ -1276,11 +1298,13 @@ content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMzIwMDQ1NX0.0WZltGzY_L_yidkslXgDE2pGfv_GT90CPn4wJX3IVR8
 ```
 
+<span style="color:red; font-size : 14px">\*\* Authorization: Bearer {지갑APP AccessToken} \*\*</span>
+
 Parameter
 
-|       Name       |  Type  | Description | Required | Example              |
-| :--------------: | :----: | ----------- | -------- | -------------------- |
-| <c-red>walletUID | String | 지갑 UID    | O        | "walletUID_00000001" |
+|   Name    |  Type  | Description | Required | Example              |
+| :-------: | :----: | ----------- | -------- | -------------------- |
+| walletUID | String | 지갑 UID    | <c-red>O | "walletUID_00000001" |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
