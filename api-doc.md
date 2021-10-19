@@ -1,6 +1,7 @@
 <style>
     h1 { display: none }
     h2 { font-size: 2em !important }
+c-red { color: red }
 </style>
 
 <h2 id="-에이락-리워드-플랫폼-api">🚀 에이락 리워드 플랫폼 API</h2>
@@ -28,9 +29,21 @@
 
 ✅ 에이락 리워드 플랫폼과 연동하기 위하여 사전에 준비하여야 하는 사항은 아래와 같습니다.
 
-1. 고객사 accessToken - 에이락에서 고객사에 전달
+1. 고객사 accessToken <c-red>- 에이락에서 고객사에 전달</c-red>
 2. 고객 등록 여부를 고객사에 전달한 callback URL
 3. 고객사 앱의 custom URL scheme 또는 deep link 등(선택 사항)
+
+   <br/>
+
+🔗 에이락 리워드 플랫폼의 API <c-red>개발</c-red>서버의 URL은 다음과 같습니다.
+
+```jsx
+https://dev.alock.io/v1/{api-url}
+```
+
+- 고객 등록/리워드 지급 요청 API는 POST 방식만을 사용합니다.
+- 항상 요청 프로토콜의 header에 Authorization 항목에 access의 토큰이 들어있어야 합니다.
+- 요청에 필요한 parameter는 json 방식을 사용합니다.
 
 <br/>
 
@@ -56,11 +69,9 @@ https://api.alock.io/v1/{api-url}
    (주)에이락의 ‘블록체인 리워드 서비스’의 고객사 회원들에게 제공되는 가상자산 입니다.
    ```
 2. **channel( 고객사 )**
-
    ```jsx
    (주)에이락의 가상자산 리워드 서비스를 제공하는 제휴사를 지칭합니다.
    ```
-
 3. **company**
    ```jsx
    (주)에이락을 지칭합니다.
@@ -175,11 +186,11 @@ https://api.alock.io/v1/{api-url}
 
    - URL: /reward
    - Header
-     - 고객사 API 토큰(accessToken)
+     - 고객사 API 토큰(channelAccessToken)
    - Request
      - 고객 식별 토큰(userToken)
      - 각 고객사 앱에서 전송하는 유니크 값(requestUID)
-     - 거래 종류(type)
+     - 거래 종류(type) <c-red> - 에이락에서 고객사에 전달</c-red>
      - 거래 금액(value)
      - 고객사에서 전달한 정보(data)
      - 통화 화폐(currency)
@@ -210,7 +221,7 @@ https://api.alock.io/v1/{api-url}
 
    - URL: /assets
    - Header
-     - 지갑 앱 API 토큰(accessToken)
+     - 지갑 앱 API 토큰(companyAccessToken)
    - Request
      - 고객 지갑 주소(safeAccount)
    - Response
@@ -232,7 +243,7 @@ https://api.alock.io/v1/{api-url}
 
    - URL: /rewards
    - Header
-     - 고객사 API 토큰(accessToken)
+     - 고객사 API 토큰(channelAccessToken)
    - Request
      - 고객 식별 토큰(UserToken)
    - Response
