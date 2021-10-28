@@ -782,20 +782,20 @@ Authorization: Bearer {지갑APP AccessToken}로 호출 시,safeAccount 값을 �
 |     gasLimit      | String | 최대 가스량             | null                                         |
 |     gasPrice      | String | 가스 비용               | null                                         |
 |        fee        | String | 트랜잭션 수수료         | null                                         |
-|       data        |  Int   | 출금 정보               | null                                         |
-|     owner_id      | String | customer id             | 1                                            |
+|       data        | String | 출금 정보               | null                                         |
+|     owner_id      |  Int   | customer id             | 1                                            |
 | owner_customerUID | String | 고객사의 고객 고유 번호 | "customerUID_001"                            |
 | owner_safeAccount | String | 에이락 월렛 주소        | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
-|     chain_id      | String | 체인 id                 | 1                                            |
+|     chain_id      |  Int   | 체인 id                 | 1                                            |
 |    chain_name     | String | 체인명                  | "Ethereum"                                   |
 |    chain_info     | String | 체인 정보               | null                                         |
-|   tokenSpec_id    | String | 토큰 id                 | 1                                            |
+|   tokenSpec_id    |  Int   | 토큰 id                 | 1                                            |
 |  tokenSpec_name   | String | 토큰명                  | "Ethereum"                                   |
 | tokenSpec_symbol  | String | 토큰 심볼               | "ETH"                                        |
 | tokenSpec_decimal | String | 토큰 데시멀             | "10"                                         |
-|     asset_id      | String | 자산 id                 | 1                                            |
+|     asset_id      |  Int   | 자산 id                 | 1                                            |
 |   asset_balance   | String | 리워드 잔고             | "50000"                                      |
-|      ethTxid      | String | 이더리움 트랜잭션 id    | null                                         |
+|      ethTxid      |  Int   | 이더리움 트랜잭션 id    | null                                         |
 
 Error Message
 
@@ -1204,7 +1204,7 @@ Parameter
 | :---------: | :----: | ------------------ | -------- | -------------------------------------------- |
 | safeAccount | String | 에이락 월렛 주소   | <c-red>O | "0x332a1d47bfcdbe0ad43dc16d5b3172bbc8c31d0b" |
 |     to      | String | 리워드를 받는 주소 | <c-red>O | "0xad0ae29ab36598f683983ddf1c2a5669b8781bc0" |
-|   assetId   | String | asset id           | <c-red>O | 1                                            |
+|   assetId   |  Int   | asset id           | <c-red>O | 1                                            |
 |    value    | String | 출금할 리워드 수량 | <c-red>O | "1"                                          |
 
 <div class="arrow">
@@ -1220,9 +1220,9 @@ Parameter
 |  createdAt  | String | 생성 시각     | "2021-07-09T05:08:29.029Z" |
 |  updatedAt  | String | 업데이트 시각 | "2021-07-09T05:08:29.029Z" |
 |   balance   | String | 리워드 잔고   | "19"                       |
-|   ownerId   | String | 고객 id       | 1                          |
-|   chainId   | String | 체인 id       | 1                          |
-| tokenSpecId | String | 토큰 id       | 1                          |
+|   ownerId   |  Int   | 고객 id       | 1                          |
+|   chainId   |  Int   | 체인 id       | 1                          |
+| tokenSpecId |  Int   | 토큰 id       | 1                          |
 
 Error Message
 
