@@ -180,7 +180,7 @@ Error Message
 Sample Call (정상 리워드 지급):
 
 ```javascript
-POST http://localhost:4000/v1/reward HTTP/1.1
+POST https://api.alock.io/v1/reward HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjMsImlhdCI6MTYyODA1Njg0NX0.OaBzbtvC9p1wr5pgbC740hYW21K11KSW44AOZBMAg80
 
@@ -188,8 +188,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjMsI
 {
 	"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIzIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8yMDAzMzAwMiIsImlhdCI6MTY2NDUxNzAzOH0.sSlPp8pMiYNnin0P6_qA_HiUP7xh1S1gym7N_85CnZQ",
   "requestUID": "리워드 지급 요청 테스트_1",
-  "date": "2022-09-16",
-  "value": "10000",
+  "date": "date_test_001",
+  "value": "1000",
   "currency": "KRW",
   "type": "transfer",
   "territory": "KR"
@@ -237,8 +237,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsI
 {
 	"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJBRlVOX1Rlc3QwMDEiLCJpYXQiOjE2NjQ1MTU2ODN9.TULE0ZaT8ThP8ERcOm-XFxHPkmeGrn0p4AX287XNeXc",
   "requestUID": "리워드 지급 테스트_지갑을 연결하지 않은 사용자_2",
-  "date": "2022-09-30",
-  "value": "10000",
+  "date": "date_test_001",
+  "value": "1000",
   "currency": "KRW",
   "type": "transfer",
   "territory": "KR"
