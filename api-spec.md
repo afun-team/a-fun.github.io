@@ -152,16 +152,18 @@ Parameter
 
 <c-red>channel_name : channel Object에 속한 name의 의미합니다. (하단 Sample Resonse 참조)</c-red>
 
-|       Name        |  Type  | Description   | Example                    |
-| :---------------: | :----: | ------------- | -------------------------- |
-|        id         |  Int   | Asset ID      | 20                         |
-|     createdAt     | String | 생성 시각     | "2021-05-21T07:17:15.653Z" |
-|     updatedAt     | String | 업데이트 시각 | "2021-05-21T07:17:15.653Z" |
-|      balance      | String | 리워드 잔고   | "10000"                    |
-|    chain_name     | String | 체인명        | "Ethereum"                 |
-|  tokenSpec_name   | String | 토큰명        | "tokenSpec_name"           |
-| tokenSpec_symbol  | String | 토큰 심볼     | "ETH"                      |
-| tokenSpec_decimal | String | 토큰 데시멀   | "10"                       |
+|       Name        |  Type   | Description           | Example                          |
+| :---------------: | :-----: | --------------------- | -------------------------------- |
+|    **success**    | Boolean | 리워드 지급 여부      | true                             |
+|      message      | String  | 리워드 미지급 시 사유 | "NOT FOUND: wallet id is empty." |
+|        id         |   Int   | Asset ID              | 20                               |
+|     createdAt     | String  | 생성 시각             | "2021-05-21T07:17:15.653Z"       |
+|     updatedAt     | String  | 업데이트 시각         | "2021-05-21T07:17:15.653Z"       |
+|      balance      | String  | 리워드 잔고           | "10000"                          |
+|    chain_name     | String  | 체인명                | "Ethereum"                       |
+|  tokenSpec_name   | String  | 토큰명                | "tokenSpec_name"                 |
+| tokenSpec_symbol  | String  | 토큰 심볼             | "ETH"                            |
+| tokenSpec_decimal | String  | 토큰 데시멀           | "10"                             |
 
 Error Message
 
@@ -175,21 +177,22 @@ Error Message
   <strong style="font-size:20px">Sample</strong>
 </div>
 
-Sample Call:
+Sample Call (정상 리워드 지급):
 
 ```javascript
 POST https://api.alock.io/v1/reward HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjMsImlhdCI6MTYyODA1Njg0NX0.OaBzbtvC9p1wr5pgbC740hYW21K11KSW44AOZBMAg80
+
 
 {
-"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0",
-"requestUID": "고객사앱에서 전송_Unique_000002",
-"date": "date_test_00001",
-"value": "1000",
-"currency": "KRW",
-"type": "transfer",
-"territory": "KR"
+	"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIzIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8yMDAzMzAwMiIsImlhdCI6MTY2NDUxNzAzOH0.sSlPp8pMiYNnin0P6_qA_HiUP7xh1S1gym7N_85CnZQ",
+  "requestUID": "리워드 지급 요청 테스트_1",
+  "date": "date_test_001",
+  "value": "1000",
+  "currency": "KRW",
+  "type": "transfer",
+  "territory": "KR"
 }
 ```
 
@@ -200,24 +203,63 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 135
-ETag: W/"87-EAvSOLtv83DV7aSPGeTBzel+V00"
-Date: Mon, 07 Jun 2021 06:51:59 GMT
+Content-Length: 234
+ETag: W/"ea-fqHGgRyCDaDTADzBxhSVLgpfG3c"
+Date: Fri, 30 Sep 2022 05:51:02 GMT
 Connection: close
 
 {
-"id": 2,
-"createdAt": "2021-06-04T05:44:18.280Z",
-"updatedAt": null,
-"balance": "12005",
-"chain": {
-  "name": "Ethereum"
-},
-"tokenSpec": {
-  "name": "Ethereum",
-  "symbol": "ETH",
-  "decimals": "10"
+  "id": 37,
+  "createdAt": "2021-08-30T08:30:41.157Z",
+  "updatedAt": null,
+  "balance": "7500000000000000000",
+  "ownerId": 149,
+  "chain": {
+    "name": "Binance"
+  },
+  "tokenSpec": {
+    "name": "에이락 테스트 토큰",
+    "symbol": "AFT",
+    "decimals": "18"
+  },
+  "success": true
 }
+
+```
+
+Sample Call (리워드 미지급 - 지갑을 연결하지 않은 경우):
+
+```javascript
+POST https://api.alock.io/v1/reward HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyNzAyNjA0MH0.1tw7hOu0FdekhxxwwTcUT-xFDewtuLEUnOp5Lf5FoMo
+
+{
+	"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJBRlVOX1Rlc3QwMDEiLCJpYXQiOjE2NjQ1MTU2ODN9.TULE0ZaT8ThP8ERcOm-XFxHPkmeGrn0p4AX287XNeXc",
+  "requestUID": "리워드 지급 테스트_지갑을 연결하지 않은 사용자_2",
+  "date": "date_test_001",
+  "value": "1000",
+  "currency": "KRW",
+  "type": "transfer",
+  "territory": "KR"
+}
+```
+
+Sample Response:
+
+```javascript
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-FVg1rzYHoFy2GiQuSrcJdKmKVFE"
+Date: Fri, 30 Sep 2022 05:29:46 GMT
+Connection: close
+
+{
+  "success": false,
+  "message": "Not Found: wallet id is empty!"
 }
 
 ```
