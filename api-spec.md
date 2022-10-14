@@ -9,23 +9,24 @@ api-title { font-size: 3em; font-weight: bold }
 <div style="font-size: 1.5em; font-weight: bold">API List</div>
 <hr style="margin-bottom: 20px !important">
 
-|            API Name            | Description        |
-| :----------------------------: | :----------------- |
-|  [Customer🔗](#Customer-link)  | Customer 등록      |
-|    [Reward🔗](#Reward-link)    | Reward 지급        |
-|  [Accounts🔗](#Accounts-link)  | Account list 조회  |
-|   [Rewards🔗](#Rewards-link)   | Reward list 조회   |
-|    [Assets🔗](#Assets-link)    | Asset list 조회    |
-| [Transfers🔗](#Transfers-link) | Transfer list 조회 |
+|           API Name           | Description       |
+| :--------------------------: | :---------------- |
+| [Customer🔗](#Customer-link) | Customer 등록     |
+|   [Reward🔗](#Reward-link)   | Reward 지급       |
+| [Accounts🔗](#Accounts-link) | Account list 조회 |
+|  [Rewards🔗](#Rewards-link)  | Reward list 조회  |
+|   [Assets🔗](#Assets-link)   | Asset list 조회   |
 
--내부용-
+<!-- | [Transfers🔗](#Transfers-link) | Transfer list 조회 | -->
+
+<!-- -내부용-
 
 |                   API Name                   | Description                        |
 | :------------------------------------------: | :--------------------------------- |
 |        [Customers🔗](#Customers-link)        | Customer list 조회                 |
 |           [Wallet🔗](#Wallet-link)           | Wallet 생성                        |
 |         [Transfer🔗](#Transfer-link)         | Reward 출금                        |
-| [CustomerKeyIndex🔗](#CustomerKeyIndex-link) | Customer의 KeyIndex 중 max 값 조회 |
+| [CustomerKeyIndex🔗](#CustomerKeyIndex-link) | Customer의 KeyIndex 중 max 값 조회 | -->
 
 ---
 
@@ -774,7 +775,7 @@ Connection: close
 
 ---
 
-<api-title id="Transfers-link">Transfers</api-title>
+<!-- <api-title id="Transfers-link">Transfers</api-title>
 
 - Returns data about a Customer's transfers.
 - 고객들의 가상자산 거래내역 반환
@@ -920,8 +921,8 @@ Connection: close
 
 <a href="#" class="btn--success">처음으로</a>
 
----
-
+--- -->
+<!--
 ## **아래 내용은 에이락 내부용입니다.**
 
 <api-title id="Customers-link">Customers</api-title>
@@ -1403,4 +1404,4 @@ ETag: W/"10-mJg0EN9+8aDw8ZN01wViOnNvDko"
 
 <a href="#" class="btn--success">처음으로</a>
 
----
+--- -->
