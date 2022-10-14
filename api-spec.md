@@ -126,9 +126,9 @@ URL
 
 ```
 POST /v1/reward HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsImlhdCI6MTYyMzc0MzY3N30.yiZFufqyzr8YHE3I_NUPQJF5L2CIKJhfk2Mj_gr3GdE
 ```
 
 <span style="color:red; font-size : 14px">\*\* Authorization: Bearer {고객사 AccessToken} \*\*</span>
@@ -180,18 +180,18 @@ Error Message
 Sample Call (정상 리워드 지급):
 
 ```javascript
-POST https://api.alock.io/v1/reward HTTP/1.1
+POST https://dev.alock.io/v1/reward HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjMsImlhdCI6MTYyODA1Njg0NX0.OaBzbtvC9p1wr5pgbC740hYW21K11KSW44AOZBMAg80
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsImlhdCI6MTYyMzc0MzY3N30.yiZFufqyzr8YHE3I_NUPQJF5L2CIKJhfk2Mj_gr3GdE
 
 
 {
-	"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIzIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8yMDAzMzAwMiIsImlhdCI6MTY2NDUxNzAzOH0.sSlPp8pMiYNnin0P6_qA_HiUP7xh1S1gym7N_85CnZQ",
-  "requestUID": "리워드 지급 요청 테스트_1",
-  "date": "date_test_001",
-  "value": "1000",
-  "currency": "KRW",
+  "userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiI1IiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF9BIiwiaWF0IjoxNjY1NzIxNjU5fQ.RoURB_vJIvXgkn_V_YcWDzhkmdhjFCHXQkegoAC1hXg",
+  "requestUID": "리워드지급테스트_20221014_001",
   "type": "transfer",
+  "date": "test_date_001",
+  "value": "10000",
+  "currency": "KRW",
   "territory": "KR"
 }
 ```
@@ -200,26 +200,27 @@ Sample Response:
 
 ```javascript
 HTTP/1.1 200 OK
+Date: Fri, 14 Oct 2022 04:28:08 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 214
+Connection: close
+Server: nginx/1.20.0
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
-Content-Type: application/json; charset=utf-8
-Content-Length: 234
-ETag: W/"ea-fqHGgRyCDaDTADzBxhSVLgpfG3c"
-Date: Fri, 30 Sep 2022 05:51:02 GMT
-Connection: close
+ETag: W/"d6-rqpgIFA9I9ZO15FEr2Q/uKdtMYM"
 
 {
-  "id": 37,
-  "createdAt": "2021-08-30T08:30:41.157Z",
+  "id": 26,
+  "createdAt": "2021-06-18T08:39:15.887Z",
   "updatedAt": null,
-  "balance": "7500000000000000000",
-  "ownerId": 149,
+  "balance": "20000000000000000000",
+  "ownerId": 46,
   "chain": {
-    "name": "Binance"
+    "name": "Mobist"
   },
   "tokenSpec": {
-    "name": "에이락 테스트 토큰",
-    "symbol": "AFT",
+    "name": "Mobist",
+    "symbol": "MITX",
     "decimals": "18"
   },
   "success": true
@@ -230,17 +231,18 @@ Connection: close
 Sample Call (리워드 미지급 - 지갑을 연결하지 않은 경우):
 
 ```javascript
-POST https://api.alock.io/v1/reward HTTP/1.1
+POST https://dev.alock.io/v1/reward HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyNzAyNjA0MH0.1tw7hOu0FdekhxxwwTcUT-xFDewtuLEUnOp5Lf5FoMo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsImlhdCI6MTYyMzc0MzY3N30.yiZFufqyzr8YHE3I_NUPQJF5L2CIKJhfk2Mj_gr3GdE
+
 
 {
-	"userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJBRlVOX1Rlc3QwMDEiLCJpYXQiOjE2NjQ1MTU2ODN9.TULE0ZaT8ThP8ERcOm-XFxHPkmeGrn0p4AX287XNeXc",
-  "requestUID": "리워드 지급 테스트_지갑을 연결하지 않은 사용자_2",
-  "date": "date_test_001",
-  "value": "1000",
-  "currency": "KRW",
+  "userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiI1IiwiY3VzdG9tZXJVSUQiOiJ0ZXN0IiwiaWF0IjoxNjY1NzIyMzI4fQ.wBkpOx91tY2xpfzVdX18Issh4LxLEKseGUDY1NdM4lQ",
+  "requestUID": "리워드미지급테스트_20221014_001",
   "type": "transfer",
+  "date": "test_date_001",
+  "value": "10000",
+  "currency": "KRW",
   "territory": "KR"
 }
 ```
@@ -249,19 +251,19 @@ Sample Response:
 
 ```javascript
 HTTP/1.1 200 OK
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
+Date: Fri, 14 Oct 2022 04:39:28 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 60
-ETag: W/"3c-FVg1rzYHoFy2GiQuSrcJdKmKVFE"
-Date: Fri, 30 Sep 2022 05:29:46 GMT
 Connection: close
+Server: nginx/1.20.0
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+ETag: W/"3c-FVg1rzYHoFy2GiQuSrcJdKmKVFE"
 
 {
   "success": false,
   "message": "Not Found: wallet id is empty!"
 }
-
 ```
 
 <a href="#" class="btn--success">처음으로</a>
