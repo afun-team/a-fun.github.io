@@ -156,8 +156,8 @@ Parameter
 |    **success**    | Boolean | 리워드 지급 여부      | true                             |
 |      message      | String  | 리워드 미지급 시 사유 | "NOT FOUND: wallet id is empty." |
 |       date        | String  | 리워드 지급 시간      | "2022-11-25T00:00:40.000Z"       |
-|      amount       | String  | 지급된 리워드 양      | “5000000000”                     |
-|      balance      | String  | 리워드 잔고           | “10000000000”                    |
+|      amount       | String  | 지급된 리워드 양      | “5000000000000000000”            |
+|      balance      | String  | 리워드 잔고           | “10000000000000000000”           |
 |    chain_name     | String  | 체인명                | "Klaytn"                         |
 |  tokenSpec_name   | String  | 토큰명                | “Mobist”                         |
 | tokenSpec_symbol  | String  | 토큰 심볼             | "MITX"                           |
@@ -188,7 +188,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsI
   "requestUID": "리워드지급테스트_20221014_001",
   "type": "reward",
   "date": "2022-11-25T00:00:40.000Z",
-  "value": "10000",
+  "value": "1000",
   "currency": "KRW",
   "territory": "KR"
 }
@@ -210,8 +210,8 @@ ETag: W/"d6-rqpgIFA9I9ZO15FEr2Q/uKdtMYM"
 {
 "success": true,
 "date": "2022-11-25T00:00:40.000Z",
-"amount": "5000000000",
-"balance": "199999999976010000000115000000000",
+"amount": "5000000000000000000",
+"balance": "10000000000000000000",
 "chain_name": "Klaytn",
 "tokenSpec_name": "Mobist",
 "tokenSpec_symbol": "MITX",
@@ -233,7 +233,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsI
   "requestUID": "리워드미지급테스트_20221014_001",
   "type": "reward",
   "date": "2022-11-25T00:00:40.000Z",
-  "value": "10000",
+  "value": "1000",
   "currency": "KRW",
   "territory": "KR"
 }
