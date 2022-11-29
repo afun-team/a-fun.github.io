@@ -136,35 +136,32 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsI
 
 Parameter
 
-|    Name    |  Type  | Description                           | Required | Example                                                                                                                                                                     |
-| :--------: | :----: | ------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| userToken  | String | 고객 식별 토큰                        | <c-red>O | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiIxIiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF8wMDEiLCJpYXQiOjE2MjI3MDQyODh9.ZdYP5rb54FYKM9FS_56m9ymXZOTRnt126zd5IuIv8m0" |
-| requestUID | String | 각 고객사 앱에서 전송하는 유니크한 값 | <c-red>O | "requestUID_example_000001"                                                                                                                                                 |
-|    date    | String | 고객사에서 전달한 date 정보           | <c-red>O | "2021-05-21T07:17:15.653Z"                                                                                                                                                  |
-|   value    | String | 고객사에서 사용자가 사용한 금액       | <c-red>O | "1"                                                                                                                                                                         |
-|  currency  | String | 통화 화폐                             | X        | "KRW"                                                                                                                                                                       |
-|    type    | String | 사용자의 이벤트 타입                  | <c-red>O | "transfer" or "signup"...                                                                                                                                                   |
-| territory  | String | 국가 지역 코드                        | X        | "KR"                                                                                                                                                                        |
+|    Name    |  Type  | Description                           | Required | Example                                                                                                                                                                   |
+| :--------: | :----: | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userToken  | String | 고객 식별 토큰                        | <c-red>O | "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiI1IiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF9BIiwiaWF0IjoxNjY1NzIxNjU5fQ.RoURB_vJIvXgkn_V_YcWDzhkmdhjFCHXQkegoAC1hXg" |
+| requestUID | String | 각 고객사 앱에서 전송하는 유니크한 값 | <c-red>O | "requestUID_example_000001"                                                                                                                                               |
+|    date    | String | 고객사에서 전달한 date 정보           | <c-red>O | "2022-11-25T00:00:40.000Z"                                                                                                                                                |
+|   value    | String | 고객사에서 사용자가 사용한 금액       | <c-red>O | "1000"                                                                                                                                                                    |
+|  currency  | String | 통화 화폐                             | X        | "KRW"                                                                                                                                                                     |
+|    type    | String | 사용자의 이벤트 타입                  | <c-red>O | "transfer" or "signup"...                                                                                                                                                 |
+| territory  | String | 국가 지역 코드                        | X        | "KR"                                                                                                                                                                      |
 
 <div class="arrow">
   <img src="./arrow_16px.png" alt=" > ">
   <strong style="font-size:20px">Response</strong>
 </div>
 
-<c-red>channel_name : channel Object에 속한 name의 의미합니다. (하단 Sample Resonse 참조)</c-red>
-
 |       Name        |  Type   | Description           | Example                          |
 | :---------------: | :-----: | --------------------- | -------------------------------- |
 |    **success**    | Boolean | 리워드 지급 여부      | true                             |
 |      message      | String  | 리워드 미지급 시 사유 | "NOT FOUND: wallet id is empty." |
-|        id         |   Int   | Asset ID              | 20                               |
-|     createdAt     | String  | 생성 시각             | "2021-05-21T07:17:15.653Z"       |
-|     updatedAt     | String  | 업데이트 시각         | "2021-05-21T07:17:15.653Z"       |
-|      balance      | String  | 리워드 잔고           | "10000"                          |
-|    chain_name     | String  | 체인명                | "Ethereum"                       |
-|  tokenSpec_name   | String  | 토큰명                | "tokenSpec_name"                 |
-| tokenSpec_symbol  | String  | 토큰 심볼             | "ETH"                            |
-| tokenSpec_decimal | String  | 토큰 데시멀           | "10"                             |
+|       date        | String  | 리워드 지급 시간      | "2022-11-25T00:00:40.000Z"       |
+|      amount       | String  | 지급된 리워드 양      | “5000000000”                     |
+|      balance      | String  | 리워드 잔고           | “10000000000”                    |
+|    chain_name     | String  | 체인명                | "Klaytn"                         |
+|  tokenSpec_name   | String  | 토큰명                | “Mobist”                         |
+| tokenSpec_symbol  | String  | 토큰 심볼             | "MITX"                           |
+| tokenSpec_decimal | String  | 토큰 데시멀           | "18"                             |
 
 Error Message
 
@@ -189,8 +186,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsI
 {
   "userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiI1IiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF9BIiwiaWF0IjoxNjY1NzIxNjU5fQ.RoURB_vJIvXgkn_V_YcWDzhkmdhjFCHXQkegoAC1hXg",
   "requestUID": "리워드지급테스트_20221014_001",
-  "type": "transfer",
-  "date": "test_date_001",
+  "type": "reward",
+  "date": "2022-11-25T00:00:40.000Z",
   "value": "10000",
   "currency": "KRW",
   "territory": "KR"
@@ -201,7 +198,7 @@ Sample Response:
 
 ```javascript
 HTTP/1.1 200 OK
-Date: Fri, 14 Oct 2022 04:28:08 GMT
+Date: Fri, 25 Nov 2022 04:28:08 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 214
 Connection: close
@@ -211,20 +208,14 @@ Access-Control-Allow-Origin: *
 ETag: W/"d6-rqpgIFA9I9ZO15FEr2Q/uKdtMYM"
 
 {
-  "id": 26,
-  "createdAt": "2021-06-18T08:39:15.887Z",
-  "updatedAt": null,
-  "balance": "20000000000000000000",
-  "ownerId": 46,
-  "chain": {
-    "name": "Mobist"
-  },
-  "tokenSpec": {
-    "name": "Mobist",
-    "symbol": "MITX",
-    "decimals": "18"
-  },
-  "success": true
+"success": true,
+"date": "2022-11-25T00:00:40.000Z",
+"amount": "5000000000",
+"balance": "199999999976010000000115000000000",
+"chain_name": "Klaytn",
+"tokenSpec_name": "Mobist",
+"tokenSpec_symbol": "MITX",
+"tokenSpec_decimal": "18"
 }
 
 ```
@@ -238,10 +229,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjUsI
 
 
 {
-  "userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiI1IiwiY3VzdG9tZXJVSUQiOiJ0ZXN0IiwiaWF0IjoxNjY1NzIyMzI4fQ.wBkpOx91tY2xpfzVdX18Issh4LxLEKseGUDY1NdM4lQ",
+  "userToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOiI1IiwiY3VzdG9tZXJVSUQiOiJjdXN0b21lclVJRF9BIiwiaWF0IjoxNjY1NzIxNjU5fQ.RoURB_vJIvXgkn_V_YcWDzhkmdhjFCHXQkegoAC1hXg",
   "requestUID": "리워드미지급테스트_20221014_001",
-  "type": "transfer",
-  "date": "test_date_001",
+  "type": "reward",
+  "date": "2022-11-25T00:00:40.000Z",
   "value": "10000",
   "currency": "KRW",
   "territory": "KR"
@@ -252,7 +243,7 @@ Sample Response:
 
 ```javascript
 HTTP/1.1 200 OK
-Date: Fri, 14 Oct 2022 04:39:28 GMT
+Date: Fri, 25 Nov 2022 04:39:28 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 60
 Connection: close
