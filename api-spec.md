@@ -44,7 +44,7 @@ URL
 
 ```
 POST /v1/customer HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
@@ -82,7 +82,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/customer HTTP/1.1
+POST https://dev.alock.io/v1/customer HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 
@@ -276,7 +276,7 @@ URL
 
 ```
 POST /v1/accounts HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 ```
@@ -338,7 +338,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/accounts HTTP/1.1
+POST https://dev.alock.io/v1/accounts HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -402,7 +402,7 @@ URL
 
 ```
 POST /v1/rewards HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 ```
@@ -463,7 +463,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/rewards HTTP/1.1
+POST https://dev.alock.io/v1/rewards HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -609,7 +609,7 @@ URL
 
 ```
 POST /v1/assets HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 ```
@@ -669,7 +669,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/assets HTTP/1.1
+POST https://dev.alock.io/v1/assets HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -782,7 +782,7 @@ URL
 
 ```
 POST /v1/transfers HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 ```
@@ -848,7 +848,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/transfers HTTP/1.1
+POST https://dev.alock.io/v1/transfers HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -932,7 +932,7 @@ URL
 
 ```
 POST /v1/customers HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 ```
@@ -987,7 +987,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/customers HTTP/1.1
+POST https://dev.alock.io/v1/customers HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjc4MTIwNX0.1DBH3PeicySHdw7fZBeig4MnLoIglcd2INmgvoudWYw
 
@@ -1070,7 +1070,7 @@ URL
 
 ```
 POST /v1/wallet HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMjcwNDQyN30.qpq_UF2ebwr2IcEtvsPaS8TMU0tVCWz3B3r_7p32MVQ
 ```
@@ -1135,7 +1135,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/asset HTTP/1.1
+POST https://dev.alock.io/v1/asset HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 
@@ -1227,7 +1227,7 @@ URL
 
 ```
 POST /v1/transfer HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTUwMDc0OH0.Vf-GchhDE-GWyV9mQcQAW9kEB2jlGmHzzZ1nL8oq_y8
 ```
@@ -1275,7 +1275,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/transfer HTTP/1.1
+POST https://dev.alock.io/v1/transfer HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsSWQiOjEsImlhdCI6MTYyMTgzNDQxN30.crpvk76sgQgIjEp5z_Ei3YXLYqWC-Chnpm31mRYNGWw
 
@@ -1329,7 +1329,7 @@ URL
 
 ```
 POST /v1/customerKeyIndex HTTP/1.1
-Host: https://api.alock.io
+Host: https://dev.alock.io
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMzIwMDQ1NX0.0WZltGzY_L_yidkslXgDE2pGfv_GT90CPn4wJX3IVR8
 ```
@@ -1366,7 +1366,7 @@ Error Message
 Sample Call:
 
 ```javascript
-POST https://api.alock.io/v1/customerKeyIndex HTTP/1.1
+POST https://dev.alock.io/v1/customerKeyIndex HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55SWQiOjEsImlhdCI6MTYyMzIwMDQ1NX0.0WZltGzY_L_yidkslXgDE2pGfv_GT90CPn4wJX3IVR8
 
